@@ -94,14 +94,19 @@ class Issue:
     def getCVE(self):
         return ", ".join(self.cve)
 
+    def sanitizedSummary(self):
+        if len(self.summary) > 512:
+            return self.summary[:512]
+        return self.summary
+
     def asSection(self):
         path = self.getPath()
         section = Section()
         section.activityTitle = "{:s} {:s}  {:s}".format(self.getIcon(as_emoji=True), self.getCVE(), path)
-        section.activitySubtitle = self.summary
+        section.activitySubtitle = self.sanitizedSummary()
         for p in self.impactedPaths:
             fact = Fact()
-            fact.name = "`{:s}`".format(fileName(p))
+            fact.name = "{:s}".format(fileName(p))
             fact.value = "_{:s}_".format(p[-100:])
             section.facts.append(fact)
         return section
