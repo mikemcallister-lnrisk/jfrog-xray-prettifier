@@ -159,6 +159,8 @@ class XrayPrettifier:
         self.buildNumber = buildNumber
     def set_fail_build(self, failBuild):
         self.failBuild = failBuild
+    def set_github_build_url(self, githubBuildUrl):
+        self.githubBuildUrl = githubBuildUrl
     def set_issue_template(self, issueTemplate):
         if issueTemplate is None:
             self.issueTemplate = None
@@ -276,13 +278,18 @@ class XrayPrettifier:
         if len(crit) > 0:
             m = ":skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
             print("## {:s}".format(m))
-            mc.title = m
+            mc.title = "💀 {:s}/{:s} {:d} critical, {:d} high xray vulnerabilities".format(self.buildName, self.buildNumber, len(crit), len(high))
             dump_obj_panel("response", data)
         else:
             m = ":fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
             print("## {:s}".format(m))
-            mc.title = m
+            mc.title = "🔥 {:s}/{:s} {:d} critical, {:d} high xray vulnerabilities".format(self.buildName, self.buildNumber, len(crit), len(high))
+            s = Section()
             dump_obj_panel("response", data)
+            
+        s.activitySubtitle = "[{:s}]({:s})".format(message, link)
+        s.activityTitle = self.githubBuildUrl
+        mc.sections.append(s)
 
 
         for c in crit:
