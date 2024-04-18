@@ -199,10 +199,10 @@ class XrayPrettifier:
             return
         
         x = len(messageCard.sections)
-        if len(messageCard.sections) > 15:
-            messageCard.sections = messageCard.sections[:15]
+        if len(messageCard.sections) > 9:
+            messageCard.sections = messageCard.sections[:9]
             section = Section()
-            section.activityTitle = "... and {:d} more".format(x-15)
+            section.activityTitle = "... and {:d} more".format(x-9)
             messageCard.sections.append(section)
         
         data = json.dumps(messageCard, cls=MessageCardEncoder, indent=2)
