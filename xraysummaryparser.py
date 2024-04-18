@@ -42,7 +42,7 @@ class MessageCardEncoder(json.JSONEncoder):
                 "@type": "MessageCard"
             }
         else:
-            return super().default(o)
+            return vars(o)
 
 class Section:
     def __init__(self):
