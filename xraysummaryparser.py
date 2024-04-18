@@ -32,14 +32,17 @@ class MessageCard():
 
 class MessageCardEncoder(json.JSONEncoder):
     def default(self, o):
-        return { 
-            "title": o.title,
-            "summary": o.title,
-            "themeColor": o.themeColor,
-            "sections": o.sections,
-            "@context": "http://schema.org/extensions",
-            "@type": "MessageCard"
-        }
+        if isinstance(o, MessageCard):
+            return { 
+                "title": o.title,
+                "summary": o.title,
+                "themeColor": o.themeColor,
+                "sections": o.sections,
+                "@context": "http://schema.org/extensions",
+                "@type": "MessageCard"
+            }
+        else:
+            return super().default(o)
 
 class Section:
     def __init__(self):
