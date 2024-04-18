@@ -1,0 +1,1360 @@
+{
+    "summary": {
+      "total_alerts": 39,
+      "fail_build": true,
+      "message": "Build kettleops-docker number 475 was scanned by Xray and 39 Alerts were generated",
+      "more_details_url": "https://rsguseast.jfrog.io/ui/scans-list/builds-scans/kettleops-docker/scan-descendants/475?version=475&package_id=build%3A%2F%2F%5Bbr3-build-info%5D%2Fkettleops-docker&build_repository=br3-build-info&component_id=build%3A%2F%2F%5Bbr3-build-info%5D%2Fkettleops-docker%3A475&page_type=security-vulnerabilities&exposure_status=to_fix"
+    },
+    "alerts": [
+      {
+        "schema_version": "",
+        "created": "2024-04-15T20:15:48.655Z",
+        "top_severity": "Critical",
+        "watch_name": "VulnerablityCheck",
+        "issues": [
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.591Z",
+            "summary": "PyJWT is a Python implementation of RFC 7519. PyJWT supports multiple different JWT signing algorithms. With JWT, an attacker submitting the JWT token can choose the used signing algorithm. The PyJWT library requires that the application chooses what algorithms are supported. The application can specify `jwt.algorithms.get_default_algorithms()` to get support for all algorithms, or specify a single algorithm. The issue is not that big as `algorithms=jwt.algorithms.get_default_algorithms()` has to be used. Users should upgrade to v2.4.0 to receive a patch for this issue. As a workaround, always be explicit with the algorithms that are accepted and expected when decoding.",
+            "description": "PyJWT is a Python implementation of RFC 7519. PyJWT supports multiple different JWT signing algorithms. With JWT, an attacker submitting the JWT token can choose the used signing algorithm. The PyJWT library requires that the application chooses what algorithms are supported. The application can specify `jwt.algorithms.get_default_algorithms()` to get support for all algorithms, or specify a single algorithm. The issue is not that big as `algorithms=jwt.algorithms.get_default_algorithms()` has to be used. Users should upgrade to v2.4.0 to receive a patch for this issue. As a workaround, always be explicit with the algorithms that are accepted and expected when decoding.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "PyJWT:1.7.1",
+                    "path": "",
+                    "sha256": "0000000000000000000000006d557d1018cafa652b2e95719bf84d2c41ae0c47",
+                    "component_id": "pypi://PyJWT:1.7.1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "PyJWT:1.7.1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-29217",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.704Z",
+            "summary": "The openssl gem for Ruby uses the same initialization vector (IV) in GCM Mode (aes-*-gcm) when the IV is set before the key, which makes it easier for context-dependent attackers to bypass the encryption protection mechanism.",
+            "description": "The openssl gem for Ruby uses the same initialization vector (IV) in GCM Mode (aes-*-gcm) when the IV is set before the key, which makes it easier for context-dependent attackers to bypass the encryption protection mechanism.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libcrypto3:3.1.1-r1",
+                    "path": "",
+                    "sha256": "9ce945d1f238fa5b3996ca5d481dda86dc78944c10ecdcbc90aaad857bdfd9fc",
+                    "component_id": "alpine://3.18:libcrypto3:3.1.1-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libcrypto3:3.1.1-r1"
+                  },
+                  {
+                    "name": "3.18:libssl3:3.1.1-r1",
+                    "path": "",
+                    "sha256": "aff3130f40e51173a1f9237ba20dcb6675d44d1f878f51377990910d53b8e54e",
+                    "component_id": "alpine://3.18:libssl3:3.1.1-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libssl3:3.1.1-r1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2016-7798",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.478Z",
+            "summary": "crypto/rsa/rsa_gen.c in OpenSSL before 0.9.6 mishandles C bitwise-shift operations that exceed the size of an expression, which makes it easier for remote attackers to defeat cryptographic protection mechanisms by leveraging improper RSA key generation on 64-bit HP-UX platforms.",
+            "description": "crypto/rsa/rsa_gen.c in OpenSSL before 0.9.6 mishandles C bitwise-shift operations that exceed the size of an expression, which makes it easier for remote attackers to defeat cryptographic protection mechanisms by leveraging improper RSA key generation on 64-bit HP-UX platforms.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libcrypto1.1:1.1.1u-r1",
+                    "path": "",
+                    "sha256": "0fba77a4b98713beb40615222fa66db734606829e7adb83f008f59110cc40a61",
+                    "component_id": "alpine://3.18:libcrypto1.1:1.1.1u-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libcrypto1.1:1.1.1u-r1"
+                  },
+                  {
+                    "name": "3.18:libssl1.1:1.1.1u-r1",
+                    "path": "",
+                    "sha256": "54cf30adb7cf31a04868f65f0dc2722319c76854e930966d27d25d746e9aa006",
+                    "component_id": "alpine://3.18:libssl1.1:1.1.1u-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libssl1.1:1.1.1u-r1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2000-1254",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.447Z",
+            "summary": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.",
+            "description": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-0286",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.694Z",
+            "summary": "Improper Input Validation vulnerability in Apache Tomcat.Tomcat from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82 and from 8.5.0 through 8.5.95 did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single \nrequest as multiple requests leading to the possibility of request \nsmuggling when behind a reverse proxy.\n\nUsers are recommended to upgrade to version 11.0.0-M11\u00a0onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.",
+            "description": "Improper Input Validation vulnerability in Apache Tomcat. Tomcat from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82, and from 8.5.0 through 8.5.95 did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single request as multiple requests leading to the possibility of request smuggling when behind a reverse proxy.\n\nUsers are recommended to upgrade to version 11.0.0-M11\u00a0onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "tomcat-embed-core-9.0.72.jar",
+                    "path": "",
+                    "sha256": "0f7f94b3280d5dbd57efd2bf700146e0ef3872a4dc3661b9958e2b59ea6a6946",
+                    "component_id": "gav://org.apache.tomcat.embed:tomcat-embed-core:9.0.72",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "org.apache.tomcat.embed:tomcat-embed-core:9.0.72"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-46589",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.354Z",
+            "summary": "In verifyHostName of OkHostnameVerifier.java, there is a possible way to accept a certificate for the wrong domain due to improperly used crypto. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.1 Android-9 Android-10 Android-11Android ID: A-171980069",
+            "description": "In verifyHostName of OkHostnameVerifier.java, there is a possible way to accept a certificate for the wrong domain due to improperly used crypto. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.1 Android-9 Android-10 Android-11Android ID: A-171980069",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "pom.xml",
+                    "path": "",
+                    "sha256": "0000000000000000000000001e3a7c20b061729fd7a555adb22bb7f88964df94",
+                    "component_id": "gav://com.squareup.okhttp3:okhttp:3.12.12",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "com.squareup.okhttp3:okhttp:3.12.12"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2021-0341",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.365Z",
+            "summary": "A parsing vulnerability for the MessageSet type in the ProtocolBuffers versions prior to and including 3.16.1, 3.17.3, 3.18.2, 3.19.4, 3.20.1 and 3.21.5 for protobuf-cpp, and versions prior to and including 3.16.1, 3.17.3, 3.18.2, 3.19.4, 3.20.1 and 4.21.5 for protobuf-python can lead to out of memory failures. A specially crafted message with multiple key-value per elements creates parsing issues, and can lead to a Denial of Service against services receiving unsanitized input. We recommend upgrading to versions 3.18.3, 3.19.5, 3.20.2, 3.21.6 for protobuf-cpp and 3.18.3, 3.19.5, 3.20.2, 4.21.6 for protobuf-python. Versions for 3.16 and 3.17 are no longer updated.",
+            "description": "### Summary\n\nA message parsing and memory management vulnerability in ProtocolBuffer\u2019s C++ and Python implementations can trigger an out of memory (OOM) failure when processing a specially crafted message, which could lead to a denial of service (DoS) on services using the libraries.\n\nReporter: [ClusterFuzz](https://google.github.io/clusterfuzz/)\n\nAffected versions: All versions of C++ Protobufs (including Python) prior to the versions listed below.\n\n### Severity & Impact\nAs scored by google  \n**Medium 5.7** - [CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H](https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H)  \nAsscored byt NIST  \n**High 7.5** - [CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H](https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nA small (~500 KB) malicious payload can be constructed which causes the running service to allocate more than 3GB of RAM.\n\n### Proof of Concept\n\nFor reproduction details, please refer to the unit test that identifies the specific inputs that exercise this parsing weakness.\n\n### Mitigation / Patching\n\nPlease update to the latest available versions of the following packages:\n- protobuf-cpp (3.18.3, 3.19.5, 3.20.2, 3.21.6)\n- protobuf-python (3.18.3, 3.19.5, 3.20.2, 4.21.6)",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "protobuf:3.6.1",
+                    "path": "",
+                    "sha256": "000000000000000000000000bbe9f45a26afe26b73b8554a9a954a004445dde4",
+                    "component_id": "pypi://protobuf:3.6.1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "protobuf:3.6.1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-1941",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.675Z",
+            "summary": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi 2022.12.07 removes root certificates from \"TrustCor\" from the root store. These are in the process of being removed from Mozilla's trust store. TrustCor's root certificates are being removed pursuant to an investigation prompted by media reporting that TrustCor's ownership also operated a business that produced spyware. Conclusions of Mozilla's investigation can be found in the linked google group discussion.",
+            "description": "Certifi 2022.12.07 removes root certificates from \"TrustCor\" from the root store. These are in the process of being removed from Mozilla's trust store.\n\nTrustCor's root certificates are being removed pursuant to an investigation prompted by media reporting that TrustCor's ownership also operated a business that produced spyware. Conclusions of Mozilla's investigation can be found [here](https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/oxX69KFvsm4/m/yLohoVqtCgAJ).",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "certifi:2019.11.28",
+                    "path": "",
+                    "sha256": "000000000000000000000000c4e8ec08aecf5a727304a62b4f32ff38ed45ca56",
+                    "component_id": "pypi://certifi:2019.11.28",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "certifi:2019.11.28"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-23491",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.614Z",
+            "summary": "An invalid pointer dereference on read can be triggered when an\napplication tries to load malformed PKCS7 data with the\nd2i_PKCS7(), d2i_PKCS7_bio() or d2i_PKCS7_fp() functions.\n\nThe result of the dereference is an application crash which could\nlead to a denial of service attack. The TLS implementation in OpenSSL\ndoes not call this function however third party applications might\ncall these functions on untrusted data.",
+            "description": "An invalid pointer dereference on read can be triggered when an application tries to load malformed PKCS7 data with the `d2i_PKCS7()`, `d2i_PKCS7_bio()` or `d2i_PKCS7_fp()` functions.\n\nThe result of the dereference is an application crash which could lead to a denial of service attack. The TLS implementation in OpenSSL does not call this function however third party applications might call these functions on untrusted data.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-0216",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.375Z",
+            "summary": "A vulnerability was found in libX11 due to an integer overflow within the XCreateImage() function. This flaw allows a local user to trigger an integer overflow and execute arbitrary code with elevated privileges.",
+            "description": "A vulnerability was found in libX11 due to an integer overflow within the XCreateImage() function. This flaw allows a local user to trigger an integer overflow and execute arbitrary code with elevated privileges.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libx11:1.8.4-r4",
+                    "path": "",
+                    "sha256": "c85c07ddce5b31c2ff326939a212e9377519789808adec9abb6b1286a3b6131b",
+                    "component_id": "alpine://3.18:libx11:1.8.4-r4",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libx11:1.8.4-r4"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-43787",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.548Z",
+            "summary": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+            "description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "tomcat-embed-core-9.0.72.jar",
+                    "path": "",
+                    "sha256": "0f7f94b3280d5dbd57efd2bf700146e0ef3872a4dc3661b9958e2b59ea6a6946",
+                    "component_id": "gav://org.apache.tomcat.embed:tomcat-embed-core:9.0.72",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "org.apache.tomcat.embed:tomcat-embed-core:9.0.72"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-44487",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.308Z",
+            "summary": "Issue summary: A bug has been identified in the processing of key and\ninitialisation vector (IV) lengths.  This can lead to potential truncation\nor overruns during the initialisation of some symmetric ciphers.\n\nImpact summary: A truncation in the IV can result in non-uniqueness,\nwhich could result in loss of confidentiality for some cipher modes.\n\nWhen calling EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() or\nEVP_CipherInit_ex2() the provided OSSL_PARAM array is processed after\nthe key and IV have been established.  Any alterations to the key length,\nvia the \"keylen\" parameter or the IV length, via the \"ivlen\" parameter,\nwithin the OSSL_PARAM array will not take effect as intended, potentially\ncausing truncation or overreading of these values.  The following ciphers\nand cipher modes are impacted: RC2, RC4, RC5, CCM, GCM and OCB.\n\nFor the CCM, GCM and OCB cipher modes, truncation of the IV can result in\nloss of confidentiality.  For example, when following NIST's SP 800-38D\nsection 8.2.1 guidance for constructing a deterministic IV for AES in\nGCM mode, truncation of the counter portion could lead to IV reuse.\n\nBoth truncations and overruns of the key and overruns of the IV will\nproduce incorrect results and could, in some cases, trigger a memory\nexception.  However, these issues are not currently assessed as security\ncritical.\n\nChanging the key and/or IV lengths is not considered to be a common operation\nand the vulnerable API was recently introduced. Furthermore it is likely that\napplication developers will have spotted this problem during testing since\ndecryption would fail unless both peers in the communication were similarly\nvulnerable. For these reasons we expect the probability of an application being\nvulnerable to this to be quite low. However if an application is vulnerable then\nthis issue is considered very serious. For these reasons we have assessed this\nissue as Moderate severity overall.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are...",
+            "description": "Issue summary: A bug has been identified in the processing of key and\ninitialisation vector (IV) lengths.  This can lead to potential truncation\nor overruns during the initialisation of some symmetric ciphers.\n\nImpact summary: A truncation in the IV can result in non-uniqueness,\nwhich could result in loss of confidentiality for some cipher modes.\n\nWhen calling EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() or\nEVP_CipherInit_ex2() the provided OSSL_PARAM array is processed after\nthe key and IV have been established.  Any alterations to the key length,\nvia the \"keylen\" parameter or the IV length, via the \"ivlen\" parameter,\nwithin the OSSL_PARAM array will not take effect as intended, potentially\ncausing truncation or overreading of these values.  The following ciphers\nand cipher modes are impacted: RC2, RC4, RC5, CCM, GCM and OCB.\n\nFor the CCM, GCM and OCB cipher modes, truncation of the IV can result in\nloss of confidentiality.  For example, when following NIST's SP 800-38D\nsection 8.2.1 guidance for constructing a deterministic IV for AES in\nGCM mode, truncation of the counter portion could lead to IV reuse.\n\nBoth truncations and overruns of the key and overruns of the IV will\nproduce incorrect results and could, in some cases, trigger a memory\nexception.  However, these issues are not currently assessed as security\ncritical.\n\nChanging the key and/or IV lengths is not considered to be a common operation\nand the vulnerable API was recently introduced. Furthermore it is likely that\napplication developers will have spotted this problem during testing since\ndecryption would fail unless both peers in the communication were similarly\nvulnerable. For these reasons we expect the probability of an application being\nvulnerable to this to be quite low. However if an application is vulnerable then\nthis issue is considered very serious. For these reasons we have assessed this\nissue as Moderate severity overall.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are...",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libcrypto3:3.1.1-r1",
+                    "path": "",
+                    "sha256": "9ce945d1f238fa5b3996ca5d481dda86dc78944c10ecdcbc90aaad857bdfd9fc",
+                    "component_id": "alpine://3.18:libcrypto3:3.1.1-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libcrypto3:3.1.1-r1"
+                  },
+                  {
+                    "name": "3.18:libssl3:3.1.1-r1",
+                    "path": "",
+                    "sha256": "aff3130f40e51173a1f9237ba20dcb6675d44d1f878f51377990910d53b8e54e",
+                    "component_id": "alpine://3.18:libssl3:3.1.1-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libssl3:3.1.1-r1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-5363",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.468Z",
+            "summary": "Before Go 1.20, the RSA based TLS key exchanges used the math/big library, which is not constant time. RSA blinding was applied to prevent timing attacks, but analysis shows this may not have been fully effective. In particular it appears as if the removal of PKCS#1 padding may leak timing information, which in turn could be used to recover session key bits. In Go 1.20, the crypto/tls library switched to a fully constant time RSA implementation, which we do not believe exhibits any timing side channels.",
+            "description": "Before Go 1.20, the RSA based TLS key exchanges used the math/big library, which is not constant time. RSA blinding was applied to prevent timing attacks, but analysis shows this may not have been fully effective. In particular it appears as if the removal of PKCS#1 padding may leak timing information, which in turn could be used to recover session key bits.\n\nIn Go 1.20, the crypto/tls library switched to a fully constant time RSA implementation, which we do not believe exhibits any timing side channels.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "go",
+                    "path": "",
+                    "sha256": "000000000000000000000000d4c7b773fab64d3bec2c6f3598b94fc89130e761",
+                    "component_id": "go://github.com/golang/go:1.19.12",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "github.com/golang/go:1.19.12"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-45287",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.527Z",
+            "summary": "An out-of-memory flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFRasterScanlineSize64() API. This flaw allows a remote attacker to cause a denial of service via a crafted input with a size smaller than 379 KB.",
+            "description": "An out-of-memory flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFRasterScanlineSize64() API. This flaw allows a remote attacker to cause a denial of service via a crafted input with a size smaller than 379 KB.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:tiff:4.5.1-r0",
+                    "path": "",
+                    "sha256": "b1bb5515ccc084cfbc32e7d529a9240d07342a9a6bc0519e1afc6dbf59defc20",
+                    "component_id": "alpine://3.18:tiff:4.5.1-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:tiff:4.5.1-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-52355",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.645Z",
+            "summary": "An issue discovered in Python Packaging Authority (PyPA) Wheel 0.37.1 and earlier allows remote attackers to cause a denial of service via attacker controlled input to wheel cli.",
+            "description": "Python Packaging Authority (PyPA) Wheel is a reference implementation of the Python wheel packaging standard. Wheel 0.37.1 and earlier are vulnerable to a Regular Expression denial of service via attacker controlled input to the wheel cli. The vulnerable regex is used to verify the validity of Wheel file names. This has been patched in version 0.38.1.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "wheel-0.34.2-py2.py3-none-any.whl",
+                    "path": "",
+                    "sha256": "4fffa3679cbd6c4541f778c5cfad39ab53415c540048265566613caf3c969e11",
+                    "component_id": "pypi://wheel:0.34.2",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "wheel:0.34.2"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-40898",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.262Z",
+            "summary": "The public API function BIO_new_NDEF is a helper function used for streaming\nASN.1 data via a BIO. It is primarily used internally to OpenSSL to support the\nSMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by\nend user applications.\n\nThe function receives a BIO from the caller, prepends a new BIO_f_asn1 filter\nBIO onto the front of it to form a BIO chain, and then returns the new head of\nthe BIO chain to the caller. Under certain conditions, for example if a CMS\nrecipient public key is invalid, the new filter BIO is freed and the function\nreturns a NULL result indicating a failure. However, in this case, the BIO chain\nis not properly cleaned up and the BIO passed by the caller still retains\ninternal pointers to the previously freed filter BIO. If the caller then goes on\nto call BIO_pop() on the BIO then a use-after-free will occur. This will most\nlikely result in a crash.\n\n\n\nThis scenario occurs directly in the internal function B64_write_ASN1() which\nmay cause BIO_new_NDEF() to be called and will subsequently call BIO_pop() on\nthe BIO. This internal function is in turn called by the public API functions\nPEM_write_bio_ASN1_stream, PEM_write_bio_CMS_stream, PEM_write_bio_PKCS7_stream,\nSMIME_write_ASN1, SMIME_write_CMS and SMIME_write_PKCS7.\n\nOther public API functions that may be impacted by this include\ni2d_ASN1_bio_stream, BIO_new_CMS, BIO_new_PKCS7, i2d_CMS_bio_stream and\ni2d_PKCS7_bio_stream.\n\nThe OpenSSL cms and smime command line applications are similarly affected.",
+            "description": "The public API function `BIO_new_NDEF` is a helper function used for streaming ASN.1 data via a `BIO`. It is primarily used internally to OpenSSL to support the SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by end user applications.\n\nThe function receives a `BIO` from the caller, prepends a new `BIO_f_asn1` filter `BIO` onto the front of it to form a `BIO` chain, and then returns the new head of the `BIO` chain to the caller. Under certain conditions, for example if a CMS recipient public key is invalid, the new filter `BIO` is freed and the function returns a `NULL` result indicating a failure. However, in this case, the `BIO` chain is not properly cleaned up and the `BIO` passed by the caller still retains internal pointers to the previously freed filter `BIO`. If the caller then goes on to call `BIO_pop()` on the `BIO` then a use-after-free will occur. This will most likely result in a crash.\n\nThis scenario occurs directly in the internal function `B64_write_ASN1()` which may cause `BIO_new_NDEF()` to be called and will subsequently call `BIO_pop()` on the `BIO`. This internal function is in turn called by the public API functions `PEM_write_bio_ASN1_stream`, `PEM_write_bio_CMS_stream`, `PEM_write_bio_PKCS7_stream`, `SMIME_write_ASN1`, `SMIME_write_CMS` and `SMIME_write_PKCS7`.\n\nOther public API functions that may be impacted by this include `i2d_ASN1_bio_stream`, `BIO_new_CMS`, `BIO_new_PKCS7`, `i2d_CMS_bio_stream` and `i2d_PKCS7_bio_stream`.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-0215",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.398Z",
+            "summary": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are affected are 8.1.0 and prior. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in MySQL Connectors, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in takeover of MySQL Connectors. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H).",
+            "description": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are affected are 8.1.0 and prior. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in MySQL Connectors, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in takeover of MySQL Connectors. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H).",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "mysql-connector-j-8.0.32.jar",
+                    "path": "",
+                    "sha256": "522329fe925980f02e5eb89b59d227245d345415ff0c08932a68c9765c13acc5",
+                    "component_id": "gav://com.mysql:mysql-connector-j:8.0.32",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "com.mysql:mysql-connector-j:8.0.32"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-22102",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.714Z",
+            "summary": "The filepath package does not recognize paths with a \\??\\ prefix as special. On Windows, a path beginning with \\??\\ is a Root Local Device path equivalent to a path beginning with \\\\?\\. Paths with a \\??\\ prefix may be used to access arbitrary locations on the system. For example, the path \\??\\c:\\x is equivalent to the more common path c:\\x. Before fix, Clean could convert a rooted path such as \\a\\..\\??\\b into the root local device path \\??\\b. Clean will now convert this to .\\??\\b. Similarly, Join(\\, ??, b) could convert a seemingly innocent sequence of path elements into the root local device path \\??\\b. Join will now convert this to \\.\\??\\b. In addition, with fix, IsAbs now correctly reports paths beginning with \\??\\ as absolute, and VolumeName correctly reports the \\??\\ prefix as a volume name. UPDATE: Go 1.20.11 and Go 1.21.4 inadvertently changed the definition of the volume name in Windows paths starting with \\?, resulting in filepath.Clean(\\?\\c:) returning \\?\\c: rather than \\?\\c:\\ (among other effects). The previous behavior has been restored.",
+            "description": "The filepath package does not recognize paths with a \\??\\ prefix as special.\n\nOn Windows, a path beginning with \\??\\ is a Root Local Device path equivalent to a path beginning with \\\\?\\. Paths with a \\??\\ prefix may be used to access arbitrary locations on the system. For example, the path \\??\\c:\\x is equivalent to the more common path c:\\x.\n\nBefore fix, Clean could convert a rooted path such as \\a\\..\\??\\b into the root local device path \\??\\b. Clean will now convert this to .\\??\\b.\n\nSimilarly, Join(\\, ??, b) could convert a seemingly innocent sequence of path elements into the root local device path \\??\\b. Join will now convert this to \\.\\??\\b.\n\nIn addition, with fix, IsAbs now correctly reports paths beginning with \\??\\ as absolute, and VolumeName correctly reports the \\??\\ prefix as a volume name.\n\nUPDATE: Go 1.20.11 and Go 1.21.4 inadvertently changed the definition of the volume name in Windows paths starting with \\?, resulting in filepath.Clean(\\?\\c:) returning \\?\\c: rather than \\?\\c:\\ (among other effects). The previous behavior has been restored.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "go",
+                    "path": "",
+                    "sha256": "000000000000000000000000d4c7b773fab64d3bec2c6f3598b94fc89130e761",
+                    "component_id": "go://github.com/golang/go:1.19.12",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "github.com/golang/go:1.19.12"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-45283",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.57Z",
+            "summary": "In Spring Security, versions 5.7.x prior to 5.7.12, 5.8.x prior to \n5.8.11, versions 6.0.x prior to 6.0.9, versions 6.1.x prior to 6.1.8, \nversions 6.2.x prior to 6.2.3, an application is possible vulnerable to \nbroken access control when it directly uses the AuthenticatedVoter#vote passing a null Authentication parameter.",
+            "description": "In Spring Security, versions 5.7.x prior to 5.7.12, 5.8.x prior to 5.8.11, versions 6.0.x prior to 6.0.9, versions 6.1.x prior to 6.1.8, versions 6.2.x prior to 6.2.3, an application is possible vulnerable to broken access control when it directly uses the AuthenticatedVoter#vote passing a null Authentication parameter.\n\nSpecifically, an application is vulnerable if:\n\nThe application uses AuthenticatedVoter directly and a null authentication parameter is passed to it resulting in an erroneous true return value.\n\nAn application is not vulnerable if any of the following is true:\n\n* The application does not use AuthenticatedVoter#vote directly.\n* The application does not pass null to AuthenticatedVoter#vote.\n\nNote that AuthenticatedVoter is deprecated since 5.8, use implementations of AuthorizationManager as a replacement.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "spring-security-core-5.8.5.jar",
+                    "path": "",
+                    "sha256": "09fa1879e1553c83db9c40fead29a2b6b0750066a930e0cac1c9c76234cd097b",
+                    "component_id": "gav://org.springframework.security:spring-security-core:5.8.5",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "org.springframework.security:spring-security-core:5.8.5"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2024-22257",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.497Z",
+            "summary": "An issue was discovered in urllib3 before 1.26.5. When provided with a URL containing many @ characters in the authority component, the authority regular expression exhibits catastrophic backtracking, causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.",
+            "description": "### Impact\n\nWhen provided with a URL containing many `@` characters in the authority component the authority regular expression exhibits catastrophic backtracking causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.\n\n\n### Patches\n\nThe issue has been fixed in urllib3 v1.26.5.\n\n### References\n\n- [CVE-2021-33503](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33503)\n- [JVNVU#92413403 (English)](https://jvn.jp/en/vu/JVNVU92413403/)\n- [JVNVU#92413403 (Japanese)](https://jvn.jp/vu/JVNVU92413403/)\n- [urllib3 v1.26.5](https://github.com/urllib3/urllib3/releases/tag/1.26.5)\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Ask in our [community Discord](https://discord.gg/urllib3)\n* Email [sethmichaellarson@gmail.com](mailto:sethmichaellarson@gmail.com)",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "urllib3:1.25.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000d9314987a35a733fd0ec66add696bcff7454bc76",
+                    "component_id": "pypi://urllib3:1.25.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "urllib3:1.25.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2021-33503",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.507Z",
+            "summary": "If an X.509 certificate contains a malformed policy constraint and\npolicy processing is enabled, then a write lock will be taken twice\nrecursively.  On some operating systems (most widely: Windows) this\nresults in a denial of service when the affected process hangs.  Policy\nprocessing being enabled on a publicly facing server is not considered\nto be a common setup.\n\nPolicy processing is enabled by passing the `-policy'\nargument to the command line utilities or by calling the\n`X509_VERIFY_PARAM_set1_policies()' function.\n\nUpdate (31 March 2023): The description of the policy processing enablement\nwas corrected based on CVE-2023-0466.",
+            "description": "If an X.509 certificate contains a malformed policy constraint and policy processing is enabled, then a write lock will be taken twice recursively. On some operating systems (most widely: Windows) this results in a denial of service when the affected process hangs. Policy processing being enabled on a publicly facing server is not considered to be a common setup. Policy processing is enabled by passing the `-policy' argument to the command line utilities or by calling either `X509_VERIFY_PARAM_add0_policy()' or `X509_VERIFY_PARAM_set1_policies()' functions.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-3996",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.343Z",
+            "summary": "The function PEM_read_bio_ex() reads a PEM file from a BIO and parses and\ndecodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data.\nIf the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are\npopulated with pointers to buffers containing the relevant decoded data. The\ncaller is responsible for freeing those buffers. It is possible to construct a\nPEM file that results in 0 bytes of payload data. In this case PEM_read_bio_ex()\nwill return a failure code but will populate the header argument with a pointer\nto a buffer that has already been freed. If the caller also frees this buffer\nthen a double free will occur. This will most likely lead to a crash. This\ncould be exploited by an attacker who has the ability to supply malicious PEM\nfiles for parsing to achieve a denial of service attack.\n\nThe functions PEM_read_bio() and PEM_read() are simple wrappers around\nPEM_read_bio_ex() and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL\nfunctions including PEM_X509_INFO_read_bio_ex() and\nSSL_CTX_use_serverinfo_file() which are also vulnerable. Some OpenSSL internal\nuses of these functions are not vulnerable because the caller does not free the\nheader argument if PEM_read_bio_ex() returns a failure code. These locations\ninclude the PEM_read_bio_TYPE() functions as well as the decoders introduced in\nOpenSSL 3.0.\n\nThe OpenSSL asn1parse command line application is also impacted by this issue.",
+            "description": "The function `PEM_read_bio_ex()` reads a PEM file from a BIO and parses and decodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data. If the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case `PEM_read_bio_ex()` will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack.\n\nThe functions `PEM_read_bio()` and `PEM_read()` are simple wrappers around `PEM_read_bio_ex()` and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL functions including `PEM_X509_INFO_read_bio_ex()` and\n`SSL_CTX_use_serverinfo_file()` which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if `PEM_read_bio_ex()` returns a failure code. These locations include the `PEM_read_bio_TYPE()` functions as well as the decoders introduced in OpenSSL 3.0.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-4450",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.438Z",
+            "summary": "urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly. This issue has been patched in urllib3 version 1.26.17 or 2.0.5.",
+            "description": "urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly.\n\nUsers **must** handle redirects themselves instead of relying on urllib3's automatic redirects to achieve safe processing of the `Cookie` header, thus we decided to strip the header by default in order to further protect users who aren't using the correct approach.\n\n## Affected usages\n\nWe believe the number of usages affected by this advisory is low. It requires all of the following to be true to be exploited:\n\n* Using an affected version of urllib3 (patched in v1.26.17 and v2.0.6)\n* Using the `Cookie` header on requests, which is mostly typical for impersonating a browser.\n* Not disabling HTTP redirects\n* Either not using HTTPS or for the origin server to redirect to a malicious origin.\n\n## Remediation\n\n* Upgrading to at least urllib3 v1.26.17 or v2.0.6\n* Disabling HTTP redirects using `redirects=False` when sending requests.\n* Not using the `Cookie` header.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "urllib3:1.25.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000d9314987a35a733fd0ec66add696bcff7454bc76",
+                    "component_id": "pypi://urllib3:1.25.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "urllib3:1.25.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-43804",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.407Z",
+            "summary": "An issue was discovered in the function gdev_prn_open_printer_seekable() in Artifex Ghostscript through 10.02.0 allows remote attackers to crash the application via a dangling pointer.",
+            "description": "An issue was discovered in the function gdev_prn_open_printer_seekable() in Artifex Ghostscript through 10.02.0 allows remote attackers to crash the application via a dangling pointer.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:ghostscript:10.01.2-r0",
+                    "path": "",
+                    "sha256": "8c9f349bc8bcf142dd7bc9ce23427aea33ec483d7d7ade480567d2280a21f6b6",
+                    "component_id": "alpine://3.18:ghostscript:10.01.2-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:ghostscript:10.01.2-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-46751",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.487Z",
+            "summary": "An issue was discovered in pip (all versions) because it installs the version with the highest version number, even if the user had intended to obtain a private package from a private index. This only affects use of the --extra-index-url option, and exploitation requires that the package does not already exist in the public index (and thus the attacker can put the package there with an arbitrary version number). NOTE: it has been reported that this is intended functionality and the user is responsible for using --extra-index-url securely",
+            "description": "An issue was discovered in pip (all versions) because it installs the version with the highest version number, even if the user had intended to obtain a private package from a private index. This only affects use of the --extra-index-url option, and exploitation requires that the package does not already exist in the public index (and thus the attacker can put the package there with an arbitrary version number). NOTE: it has been reported that this is intended functionality and the user is responsible for using --extra-index-url securely",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "pip-20.0.2-py2.py3-none-any.whl",
+                    "path": "",
+                    "sha256": "e1e7976d25f3b03a69b58e796e091f3630eee40042a92c089f27c0e33c0d3441",
+                    "component_id": "pypi://pip:20.0.2",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "pip:20.0.2"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2018-20225",
+            "applicability_details": null
+          },
+          {
+            "severity": "Critical",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.655Z",
+            "summary": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts. Certifi prior to version 2023.07.22 recognizes \"e-Tugra\" root certificates. e-Tugra's root certificates were subject to an investigation prompted by reporting of security issues in their systems. Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store.",
+            "description": "Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store. These are in the process of being removed from Mozilla's trust store.\n\n e-Tugra's root certificates are being removed pursuant to an investigation prompted by reporting of security issues in their systems. Conclusions of Mozilla's investigation can be found [here](https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/C-HrP1SEq1A).",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "certifi:2019.11.28",
+                    "path": "",
+                    "sha256": "000000000000000000000000c4e8ec08aecf5a727304a62b4f32ff38ed45ca56",
+                    "component_id": "pypi://certifi:2019.11.28",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "certifi:2019.11.28"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-37920",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.602Z",
+            "summary": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)",
+            "description": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libwebp:1.3.1-r0",
+                    "path": "",
+                    "sha256": "4dde340d80f6ced7a1290171379bda4ee8045de12ad965c5c9c70d984dd699c1",
+                    "component_id": "alpine://3.18:libwebp:1.3.1-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libwebp:1.3.1-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-4863",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.665Z",
+            "summary": "In Artifex Ghostscript through 10.01.2, gdevijs.c in GhostPDL can lead to remote code execution via crafted PostScript documents because they can switch to the IJS device, or change the IjsServer parameter, after SAFER has been activated. NOTE: it is a documented risk that the IJS server can be specified on a gs command line (the IJS device inherently must execute a command to start the IJS server).",
+            "description": "In Artifex Ghostscript through 10.01.2, gdevijs.c in GhostPDL can lead to remote code execution via crafted PostScript documents because they can switch to the IJS device, or change the IjsServer parameter, after SAFER has been activated. NOTE: it is a documented risk that the IJS server can be specified on a gs command line (the IJS device inherently must execute a command to start the IJS server).",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:ghostscript:10.01.2-r0",
+                    "path": "",
+                    "sha256": "8c9f349bc8bcf142dd7bc9ce23427aea33ec483d7d7ade480567d2280a21f6b6",
+                    "component_id": "alpine://3.18:ghostscript:10.01.2-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:ghostscript:10.01.2-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-43115",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.624Z",
+            "summary": "Due to failure in validating the length provided by an attacker-crafted PPD PostScript document, CUPS and libppd are susceptible to a heap-based buffer overflow and possibly code execution. This issue has been fixed in CUPS version 2.4.7, released in September of 2023.",
+            "description": "Due to failure in validating the length provided by an attacker-crafted PPD PostScript document, CUPS and libppd are susceptible to a heap-based buffer overflow and possibly code execution. This issue has been fixed in CUPS version 2.4.7, released in September of 2023.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:cups-libs:2.4.6-r0",
+                    "path": "",
+                    "sha256": "d35755b7050cb989eac6935f41b75fa4d708b77803a0ab3f5b845dfa6dd98a38",
+                    "component_id": "alpine://3.18:cups-libs:2.4.6-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:cups-libs:2.4.6-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-4504",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.334Z",
+            "summary": "libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.",
+            "description": "libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:libexpat:2.5.0-r1",
+                    "path": "",
+                    "sha256": "cc13f0bcdfedbad4f7e986a7f4afb5e68cc1bfc17e2c9fccfed74c04ac6e3a6e",
+                    "component_id": "alpine://3.18:libexpat:2.5.0-r1",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:libexpat:2.5.0-r1"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-52425",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.516Z",
+            "summary": "A NULL pointer can be dereferenced when signatures are being\nverified on PKCS7 signed or signedAndEnveloped data. In case the hash\nalgorithm used for the signature is known to the OpenSSL library but\nthe implementation of the hash algorithm is not available the digest\ninitialization will fail. There is a missing check for the return\nvalue from the initialization function which later leads to invalid\nusage of the digest API most likely leading to a crash.\n\nThe unavailability of an algorithm can be caused by using FIPS\nenabled configuration of providers or more commonly by not loading\nthe legacy provider.\n\nPKCS7 data is processed by the SMIME library calls and also by the\ntime stamp (TS) library calls. The TLS implementation in OpenSSL does\nnot call these functions however third party applications would be\naffected if they call these functions to verify signatures on untrusted\ndata.",
+            "description": "A `NULL` pointer can be dereferenced when signatures are being verified on PKCS7 `signed` or `signedAndEnveloped` data. In case the hash algorithm used for the signature is known to the OpenSSL library but the implementation of the hash algorithm is not available the digest initialization will fail. There is a missing check for the return value from the initialization function which later leads to invalid usage of the digest API most likely leading to a crash. The unavailability of an algorithm can be caused by using FIPS enabled configuration of providers or more commonly by not loading the legacy provider.\n\nPKCS7 data is processed by the SMIME library calls and also by the time stamp (TS) library calls. The TLS implementation in OpenSSL does not call these functions however third party applications would be affected if they call these functions to verify signatures on untrusted data.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-0401",
+            "applicability_details": null
+          },
+          {
+            "severity": "Critical",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.559Z",
+            "summary": "There is a stack overflow vulnerability in ash.c:6030 in busybox before 1.35. In the environment of Internet of Vehicles, this vulnerability can be executed from command to arbitrary code execution.",
+            "description": "There is a stack overflow vulnerability in ash.c:6030 in busybox before 1.35. In the environment of Internet of Vehicles, this vulnerability can be executed from command to arbitrary code execution.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:busybox:1.36.1-r0",
+                    "path": "",
+                    "sha256": "6211ee814637e42776068aac596b36792a18b517f142c7126898a091b99bef6d",
+                    "component_id": "alpine://3.18:busybox:1.36.1-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:busybox:1.36.1-r0"
+                  },
+                  {
+                    "name": "3.18:ssl_client:1.36.1-r0",
+                    "path": "",
+                    "sha256": "1d9f36b7295d76fc661ef03fb2aefe4e1cc910581cb50f698aea211cc59ec10e",
+                    "component_id": "alpine://3.18:ssl_client:1.36.1-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:ssl_client:1.36.1-r0"
+                  },
+                  {
+                    "name": "3.18:busybox-binsh:1.36.1-r0",
+                    "path": "",
+                    "sha256": "758ee610d6e77fac8f594377f4e4503cf23ac4c6a6edfe4821efd340bb95d4c3",
+                    "component_id": "alpine://3.18:busybox-binsh:1.36.1-r0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:busybox-binsh:1.36.1-r0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2022-48174",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.273Z",
+            "summary": "Issue summary: The POLY1305 MAC (message authentication code) implementation\ncontains a bug that might corrupt the internal state of applications on the\nWindows 64 platform when running on newer X86_64 processors supporting the\nAVX512-IFMA instructions.\n\nImpact summary: If in an application that uses the OpenSSL library an attacker\ncan influence whether the POLY1305 MAC algorithm is used, the application\nstate might be corrupted with various application dependent consequences.\n\nThe POLY1305 MAC (message authentication code) implementation in OpenSSL does\nnot save the contents of non-volatile XMM registers on Windows 64 platform\nwhen calculating the MAC of data larger than 64 bytes. Before returning to\nthe caller all the XMM registers are set to zero rather than restoring their\nprevious content. The vulnerable code is used only on newer x86_64 processors\nsupporting the AVX512-IFMA instructions.\n\nThe consequences of this kind of internal application state corruption can\nbe various - from no consequences, if the calling application does not\ndepend on the contents of non-volatile XMM registers at all, to the worst\nconsequences, where the attacker could get complete control of the application\nprocess. However given the contents of the registers are just zeroized so\nthe attacker cannot put arbitrary values inside, the most likely consequence,\nif any, would be an incorrect result of some application dependent\ncalculations or a crash leading to a denial of service.\n\nThe POLY1305 MAC algorithm is most frequently used as part of the\nCHACHA20-POLY1305 AEAD (authenticated encryption with associated data)\nalgorithm. The most common usage of this AEAD cipher is with TLS protocol\nversions 1.2 and 1.3 and a malicious client can influence whether this AEAD\ncipher is used by the server. This implies that server applications using\nOpenSSL can be potentially impacted. However we are currently not aware of\nany concrete application that would be affected by this issue therefore we\nconsider this a Low severity security issue.\n\n...",
+            "description": "pyca/cryptography's wheels include a statically linked copy of OpenSSL. The versions of OpenSSL included in cryptography 2.5-41.0.3 are vulnerable to several security issues. More details about the vulnerabilities themselves can be found in https://www.openssl.org/news/secadv/20230908.txt.\n\nIf you are building cryptography source (\"sdist\") then you are responsible for upgrading your copy of OpenSSL. Only users installing from wheels built by the cryptography project (i.e., those distributed on PyPI) need to update their cryptography versions.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-4807",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.539Z",
+            "summary": "Using go get to fetch a module with the \".git\" suffix may unexpectedly fallback to the insecure \"git://\" protocol if the module is unavailable via the secure \"https://\" and \"git+ssh://\" protocols, even if GOINSECURE is not set for said module. This only affects users who are not using the module proxy and are fetching modules directly (i.e. GOPROXY=off).",
+            "description": "Using go get to fetch a module with the \".git\" suffix may unexpectedly fallback to the insecure \"git://\" protocol if the module is unavailable via the secure \"https://\" and \"git+ssh://\" protocols, even if GOINSECURE is not set for said module. This only affects users who are not using the module proxy and are fetching modules directly (i.e. GOPROXY=off).",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "go",
+                    "path": "",
+                    "sha256": "000000000000000000000000d4c7b773fab64d3bec2c6f3598b94fc89130e761",
+                    "component_id": "go://github.com/golang/go:1.19.12",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "github.com/golang/go:1.19.12"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-45285",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.418Z",
+            "summary": "A vulnerability was found in GnuTLS, where a cockpit (which uses gnuTLS) rejects a certificate chain with distributed trust. This issue occurs when validating a certificate chain with cockpit-certificate-ensure. This flaw allows an unauthenticated, remote client or attacker to initiate a denial of service attack.",
+            "description": "A vulnerability was found in GnuTLS, where a cockpit (which uses gnuTLS) rejects a certificate chain with distributed trust. This issue occurs when validating a certificate chain with cockpit-certificate-ensure. This flaw allows an unauthenticated, remote client or attacker to initiate a denial of service attack.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:gnutls:3.8.0-r2",
+                    "path": "",
+                    "sha256": "7fe45762b948eaa4cc76d6d752d3235b3e30253d832b1a15c4040499477b35f1",
+                    "component_id": "alpine://3.18:gnutls:3.8.0-r2",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:gnutls:3.8.0-r2"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2024-0567",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.58Z",
+            "summary": "GzipSource does not handle an exception that might be raised when parsing a malformed gzip buffer. This may lead to denial of service of the Okio client when handling a crafted GZIP archive, by using the GzipSource class.",
+            "description": "GzipSource does not handle an exception that might be raised when parsing a malformed gzip buffer. This may lead to denial of service of the Okio client when handling a crafted GZIP archive, by using the GzipSource class.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "okio-2.8.0.jar",
+                    "path": "",
+                    "sha256": "4496b06e73982fcdd8a5393f46e5df2ce2fa4465df5895454cac68a32f09bbc8",
+                    "component_id": "gav://com.squareup.okio:okio:2.8.0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "com.squareup.okio:okio:2.8.0"
+                  },
+                  {
+                    "name": "pom.xml",
+                    "path": "",
+                    "sha256": "00000000000000000000000071da26cd0d0b5c84c1bae9b8f4adcdbf05f05d55",
+                    "component_id": "gav://com.squareup.okio:okio:1.15.0",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "com.squareup.okio:okio:1.15.0"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-3635",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.458Z",
+            "summary": "A flaw was found in the python-cryptography package. This issue may allow a remote attacker to decrypt captured messages in TLS servers that use RSA key exchanges, which may lead to exposure of confidential or sensitive data.",
+            "description": "A flaw was found in the python-cryptography package. This issue may allow a remote attacker to decrypt captured messages in TLS servers that use RSA key exchanges, which may lead to exposure of confidential or sensitive data.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-50782",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.385Z",
+            "summary": "An invalid pointer dereference on read can be triggered when an\napplication tries to check a malformed DSA public key by the\nEVP_PKEY_public_check() function. This will most likely lead\nto an application crash. This function can be called on public\nkeys supplied from untrusted sources which could allow an attacker\nto cause a denial of service attack.\n\nThe TLS implementation in OpenSSL does not call this function\nbut applications might call the function if there are additional\nsecurity requirements imposed by standards such as FIPS 140-3.",
+            "description": "An invalid pointer dereference on read can be triggered when an application tries to check a malformed DSA public key by the `EVP_PKEY_public_check()` function. This will most likely lead to an application crash. This function can be called on public keys supplied from untrusted sources which could allow an attacker to cause a denial of service attack.\n\nThe TLS implementation in OpenSSL does not call this function but applications might call the function if there are additional security requirements imposed by standards such as FIPS 140-3.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "cryptography:2.8",
+                    "path": "",
+                    "sha256": "000000000000000000000000f5559482da1899daa351f0be597874262067aa26",
+                    "component_id": "pypi://cryptography:2.8",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "cryptography:2.8"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2023-0217",
+            "applicability_details": null
+          },
+          {
+            "severity": "High",
+            "type": "Security",
+            "provider": "JFrog",
+            "created": "2024-04-15T20:15:48.429Z",
+            "summary": "A vulnerability was found in GnuTLS. The response times to malformed ciphertexts in RSA-PSK ClientKeyExchange differ from the response times of ciphertexts with correct PKCS#1 v1.5 padding. This issue may allow a remote attacker to perform a timing side-channel attack in the RSA-PSK key exchange, potentially leading to the leakage of sensitive data. CVE-2024-0553 is designated as an incomplete resolution for CVE-2023-5981.",
+            "description": "A vulnerability was found in GnuTLS. The response times to malformed ciphertexts in RSA-PSK ClientKeyExchange differ from the response times of ciphertexts with correct PKCS#1 v1.5 padding. This issue may allow a remote attacker to perform a timing side-channel attack in the RSA-PSK key exchange, potentially leading to the leakage of sensitive data. CVE-2024-0553 is designated as an incomplete resolution for CVE-2023-5981.",
+            "impacted_artifacts": [
+              {
+                "name": "kettleops-docker",
+                "display_name": "[br3-build-info]/kettleops-docker:475",
+                "path": "default/br3-build-info/kettleops-docker",
+                "pkg_type": "Build",
+                "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "sha1": "",
+                "depth": 0,
+                "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                "infected_files": [
+                  {
+                    "name": "3.18:gnutls:3.8.0-r2",
+                    "path": "",
+                    "sha256": "7fe45762b948eaa4cc76d6d752d3235b3e30253d832b1a15c4040499477b35f1",
+                    "component_id": "alpine://3.18:gnutls:3.8.0-r2",
+                    "depth": 0,
+                    "parent_sha": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
+                    "display_name": "3.18:gnutls:3.8.0-r2"
+                  }
+                ]
+              }
+            ],
+            "cve": "CVE-2024-0553",
+            "applicability_details": null
+          }
+        ]
+      }
+    ],
+    "licenses": []
+  }
