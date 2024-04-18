@@ -52,6 +52,7 @@ runs:
       id: render
       run: |
         pushd xraysummaryparser 
+        ls -la >> $GITHUB_STEP_SUMMARY
         cat << EOF >> getbuild.py
         import xraysummaryparser
         xray = xraysummaryparser.XrayPrettifier()
