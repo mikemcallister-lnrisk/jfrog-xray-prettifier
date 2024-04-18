@@ -87,8 +87,6 @@ class XrayPrettifier:
         self.buildName = buildName
     def set_build_number(self, buildNumber):
         self.buildNumber = buildNumber
-    def set_build_repository(self, buildRepository):
-        self.buildRepository = buildRepository
     def set_fail_build(self, failBuild):
         self.failBuild = failBuild
     def set_issue_template(self, issueTemplate):
@@ -97,7 +95,9 @@ class XrayPrettifier:
     def __init__(self):
         self.hasData = False
         self.failBuild = False
-    
+        self.buildName = None
+        self.buildNumber = None
+        self.issueTemplate = None
    
 
     def analyze_results(self, filename):
