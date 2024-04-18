@@ -35,7 +35,7 @@ class MessageCard(JSONEncoder):
             "title": self.title,
             "summary": self.title,
             "themeColor": self.themeColor,
-            "sections": self.sections
+            "sections": self.sections,
             "@context": "http://schema.org/extensions",
             "@type": "MessageCard"
         }
