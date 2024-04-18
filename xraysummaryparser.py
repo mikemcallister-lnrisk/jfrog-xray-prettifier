@@ -252,10 +252,10 @@ class XrayPrettifier:
 
         for c in crit:
             c.print()
-            m.sections.append(c.asSection())
+            mc.sections.append(c.asSection())
         for h in high:
             h.print()
-            m.sections.append(h.asSection())
+            mc.sections.append(h.asSection())
 
         self.send_message_card(mc)
 
