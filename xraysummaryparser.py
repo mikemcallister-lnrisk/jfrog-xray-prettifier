@@ -284,9 +284,9 @@ class XrayPrettifier:
             m = ":fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
             print("## {:s}".format(m))
             mc.title = "🔥 {:s}/{:s} {:d} critical, {:d} high xray vulnerabilities".format(self.buildName, self.buildNumber, len(crit), len(high))
-            s = Section()
             dump_obj_panel("response", data)
-            
+
+        s = Section()
         s.activitySubtitle = "[{:s}]({:s})".format(message, link)
         s.activityTitle = self.githubBuildUrl
         mc.sections.append(s)
