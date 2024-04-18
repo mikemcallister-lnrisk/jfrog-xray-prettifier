@@ -51,7 +51,9 @@ runs:
     - name: render markdown
       id: render
       run: |
+        pwd >> $GITHUB_STEP_SUMMARY
         pushd xraysummaryparser 
+        pwd >> $GITHUB_STEP_SUMMARY
         ls -la >> $GITHUB_STEP_SUMMARY
         cat << EOF >> getbuild.py
         import xraysummaryparser
