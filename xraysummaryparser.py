@@ -198,11 +198,18 @@ class XrayPrettifier:
         if not self.teamsEnabled():
             return
         
+        x = len(messageCard.sections)
+        if len(messageCard.sections) > 15:
+            messageCard.sections = messageCard.sections[:15]
+            section = Section()
+            section.activityTitle = "... and {:d} more".format(x-15)
+            messageCard.sections.append(section)
+        
         data = json.dumps(messageCard, cls=MessageCardEncoder, indent=2)
-
         dump_strjson_panel("messageCard", data)
-
         resp = request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
+
+
         dump_strjson_panel("response", resp.text)
 
     def analyze_results(self, filename):
