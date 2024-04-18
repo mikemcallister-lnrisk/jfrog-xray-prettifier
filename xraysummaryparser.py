@@ -154,20 +154,20 @@ class XrayPrettifier:
         if not hasData:
             bail_with_data("missing xray data", data)
         if len(crit) == 0 and len(high) == 0:
-            print("## :trophy: 0 critical, 0 high xray vulernabilities for this build - [{:s}]({:s})".format(self.message, self.link))
+            print("## :trophy: 0 critical, 0 high xray vulernabilities for this build - [{:s}]({:s})".format(message, link))
             dump_obj_panel("response", data)
             exit(0)
-        if len(self.crit) > 0:
-            print("## :skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(self.crit) , len(self.high),self.message, self.link))
+        if len(crit) > 0:
+            print("## :skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link))
             dump_obj_panel("response", data)
         else:
-            print("## :fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(self.crit) , len(self.high),self.message, self.link))
+            print("## :fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link))
             dump_obj_panel("response", data)
 
 
-        for c in self.crit:
+        for c in crit:
             c.print()
-        for h in self.high:
+        for h in high:
             h.print()
 
         if self.failBuild:
