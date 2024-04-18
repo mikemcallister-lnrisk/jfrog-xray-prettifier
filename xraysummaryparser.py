@@ -273,7 +273,12 @@ class XrayPrettifier:
             m = ":trophy: 0 critical, 0 high xray vulernabilities for this build - [{:s}]({:s})".format(message, link)
             print("## {:s}".format(m))
             dump_obj_panel("response", data)
-            mc = MessageCard(m, "00FF00")
+            mc = MessageCard("Success", "00FF00")
+            mc.title = "🏆 {:s} - {:d} critical, {:d} high xray vulnerabilities".format(self.githubRepo, len(crit), len(high))
+            s = Section()
+            s.activitySubtitle = "[{:s}]({:s})".format(message, link)
+            s.activityTitle = self.githubBuildUrl
+            mc.sections.append(s)
             self.send_message_card(mc)
             exit(0)
         mc = MessageCard("Xray Vulnerabilities", "FF0000")
