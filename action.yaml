@@ -24,6 +24,7 @@ inputs:
       violation_id: the violation id of the vulnerability, same as the cve id
       build_name: the name of the build
       build_number: the number of the build
+      build_version: the number of the build.  synonumous with build_number
       example: https://github.com/myorg/exception-requests/issues/new?assignees=&labels=approved%2Capplied&projects=&template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo
     required: false
     default: "NA"
