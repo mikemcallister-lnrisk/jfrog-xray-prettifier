@@ -96,8 +96,10 @@ class XrayPrettifier:
     def set_issue_template(self, issueTemplate):
         if issueTemplate is None:
             self.issueTemplate = None
-        if issueTemplate != "NA":
+            return
+        if issueTemplate == "NA":
             self.issueTemplate = None
+            return
         self.issueTemplate = issueTemplate
 
     def __init__(self):

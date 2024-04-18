@@ -21,7 +21,7 @@ on:
                 description: 'Template'
                 required: true
                 options:
-                    - "https://github.com/myorg/repo/issues/new?template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo"
+                    - "https://github.com/myorg/repo/issues/new?template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+{build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo"
                     - "NA"
 
 jobs:
