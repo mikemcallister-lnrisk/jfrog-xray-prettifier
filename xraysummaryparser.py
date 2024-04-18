@@ -75,18 +75,23 @@ class Issue:
             path = fileName(self.impactedPaths[0])
         return path
 
-    def getIcon(self):
+    def getIcon(self, as_emoji=False):
         icon = ":fire:"
+        if as_emoji:
+            icon = "🔥"
         if (self.severity == 'Critical'):
             icon = ":skull:"
+            if as_emoji:
+                icon = "💀"
         return icon
 
     def getCVE(self):
         return ", ".join(self.cve)
 
     def asSection(self):
+        path = self.getPath()
         section = Section()
-        section.activityTitle = "{:s} {:s}  {:s}".format(self.getIcon(), self.getCVE(), path)
+        section.activityTitle = "{:s} {:s}  {:s}".format(self.getIcon(as_emoji=True), self.getCVE(), path)
         section.activitySubtitle = self.summary
         for p in self.impactedPaths:
             fact = Fact()
