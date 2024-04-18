@@ -24,7 +24,7 @@ def bail_with_data(m, d):
 
 
 class MessageCard(JSONEncoder):
-    def __init__(self, title), themeColor="000000"):
+    def __init__(self, title, themeColor="000000"):
         self.title = title
         self.themeColor = themeColor
         self.sections = []
