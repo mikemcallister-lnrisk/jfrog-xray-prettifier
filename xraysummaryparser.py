@@ -143,7 +143,7 @@ class XrayPrettifier:
             issueObj.buildNumber = self.buildNumber
             issueObj.severity = issue['severity']
             issueObj.summary = issue['summary']
-            issueObj.template = self.issueTemplate
+            issueObj.issueTemplate = self.issueTemplate
             issueObj.issue = issue
             if 'cve' not in issue:
                 continue
