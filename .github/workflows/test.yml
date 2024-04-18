@@ -45,6 +45,7 @@ jobs:
                 BUILD_NUMBER: 1
                 FAIL_BUILD: ${{ github.event.inputs.failOnXrayResults == 'true' }}
                 ISSUE_URL_TEMPLATE: ${{ github.event.inputs.template }}
+                TEAMS_WEBHOOK: ${{ github.event.inputs.teams }}
 
 
             

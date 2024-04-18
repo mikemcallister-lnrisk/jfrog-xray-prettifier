@@ -152,6 +152,9 @@ class XrayPrettifier:
         if issueTemplate is None:
             self.issueTemplate = None
             return
+        if issueTemplate == "":
+            self.issueTemplate = None
+            return
         if issueTemplate == "NA":
             self.issueTemplate = None
             return
@@ -159,6 +162,9 @@ class XrayPrettifier:
 
     def set_teams_webhook(self, teamsWebhook):
         if teamsWebhook is None:
+            self.teamsWebhook = None
+            return
+        if teamsWebhook == "":
             self.teamsWebhook = None
             return
         if teamsWebhook == "NA":
