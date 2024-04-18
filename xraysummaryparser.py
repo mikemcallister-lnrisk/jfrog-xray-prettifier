@@ -24,23 +24,22 @@ def bail_with_data(m, d):
     exit(0)
 
 
-class MessageCard(json.JSONEncoder):
+class MessageCard():
     def __init__(self, title, themeColor="000000"):
         self.title = title
         self.themeColor = themeColor
         self.sections = []
 
-
+class MessageCardEncoder(json.JSONEncoder):
     def default(self, o):
         return { 
-            "title": self.title,
-            "summary": self.title,
-            "themeColor": self.themeColor,
-            "sections": self.sections,
+            "title": o.title,
+            "summary": o.title,
+            "themeColor": o.themeColor,
+            "sections": o.sections,
             "@context": "http://schema.org/extensions",
             "@type": "MessageCard"
         }
-
 
 class Section:
     def __init__(self):
@@ -188,7 +187,7 @@ class XrayPrettifier:
         if not self.teamsEnabled():
             return
         
-        data = json.dumps(messageCard, cls=MessageCard)
+        data = json.dumps(messageCard, cls=MessageCardEncoder)
         request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
 
     def analyze_results(self, filename):
