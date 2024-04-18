@@ -190,7 +190,10 @@ class XrayPrettifier:
         if not self.teamsEnabled():
             return
         
-        data = json.dumps(messageCard, cls=MessageCardEncoder)
+        data = json.dumps(messageCard, cls=MessageCardEncoder, indent=2)
+
+        dump_obj_panel("messageCard", data)
+
         request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
 
     def analyze_results(self, filename):
