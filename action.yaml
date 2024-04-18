@@ -37,8 +37,8 @@ runs:
       id: render
       run: |
         cat << EOF >> getbuild.py
-        from xray_prettifier import XrayPrettifier
-        xray = XrayPrettifier()
+        import xraysummaryparser
+        xray = xraysummaryparser.XrayPrettifier()
         xray.set_build_name("${{ inputs.BUILD_NAME }}")
         xray.set_build_number("${{ inputs.BUILD_NUMBER }}")
         xray.set_fail_build("${{ inputs.FAIL_BUILD }}" == "true")
