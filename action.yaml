@@ -35,6 +35,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        path: xraysummaryparser
     - name: 'Set up Python 3.8'
       uses: actions/setup-python@v4.3.0
       with:
@@ -47,6 +51,7 @@ runs:
     - name: render markdown
       id: render
       run: |
+        pushd xraysummaryparser 
         cat << EOF >> getbuild.py
         import xraysummaryparser
         xray = xraysummaryparser.XrayPrettifier()
@@ -57,7 +62,8 @@ runs:
         xray.set_teams_webhook("${{ inputs.TEAMS_WEBHOOK }}")
         xray.set_github_repo("${{ github.repository }}")
         xray.set_github_build_url("${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
-        xray.analyze_results("${{ inputs.XRAY_RESULTS_JSON_FILE }}")
+        xray.analyze_results("../${{ inputs.XRAY_RESULTS_JSON_FILE }}")
         EOF
         python getbuild.py >> $GITHUB_STEP_SUMMARY
+        popd
       shell: bash
