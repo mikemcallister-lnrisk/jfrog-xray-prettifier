@@ -23,7 +23,7 @@ def bail_with_data(m, d):
     exit(0)
 
 
-class MessageCard(JSONEncoder):
+class MessageCard(json.JSONEncoder):
     def __init__(self, title, themeColor="000000"):
         self.title = title
         self.themeColor = themeColor
