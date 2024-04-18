@@ -187,7 +187,9 @@ class XrayPrettifier:
     def send_message_card(self, messageCard):
         if not self.teamsEnabled():
             return
-        request.post(self.teamsWebhook, json=messageCard)
+        
+        data = json.dumps(messageCard, cls=MessageCard)
+        request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
 
     def analyze_results(self, filename):
         with open(filename) as f:
