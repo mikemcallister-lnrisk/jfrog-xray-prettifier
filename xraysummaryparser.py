@@ -11,7 +11,7 @@ def dump_obj_panel(title, obj):
     print("<details><summary>{:s}</summary>".format(title))
     print("")
     print("```json")
-    print(json.dumps(self.issue, indent=2))
+    print(json.dumps(obj, indent=2))
     print("```")
     print("")
     print("</details>")
