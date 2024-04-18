@@ -9,10 +9,13 @@ def fileName(path):
 
 
 def dump_obj_panel(title, obj):
+    dump_strjson_panel(title, json.dumps(obj, indent=2))
+
+def dump_strjson_panel(title, obj):
     print("<details><summary>{:s}</summary>".format(title))
     print("")
     print("```json")
-    print(json.dumps(obj, indent=2))
+    print(obj)
     print("```")
     print("")
     print("</details>")
@@ -192,7 +195,7 @@ class XrayPrettifier:
         
         data = json.dumps(messageCard, cls=MessageCardEncoder, indent=2)
 
-        dump_obj_panel("messageCard", data)
+        dump_strjson_panel("messageCard", data)
 
         request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
 
