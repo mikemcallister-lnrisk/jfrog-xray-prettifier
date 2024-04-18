@@ -16,6 +16,13 @@ on:
                 options:
                 - true
                 - false
+            template:
+                type: choice
+                description: 'Template'
+                required: true
+                options:
+                    - "https://github.com/myorg/repo/issues/new?template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo"
+                    - "NA"
 
 jobs:
     test:
@@ -32,7 +39,7 @@ jobs:
                 BUILD_NAME: ${{ github.event.inputs.BUILD_NAME }}
                 BUILD_NUMBER: 1
                 FAIL_BUILD: ${{ github.event.inputs.failOnXrayResults == 'true' }}
-                ISSUE_URL_TEMPLATE: https://github.com/myorg/repo/issues/new?template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=[]
+                ISSUE_URL_TEMPLATE: ${{ github.event.inputs.template }}
 
 
             
