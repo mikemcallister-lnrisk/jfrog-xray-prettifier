@@ -63,7 +63,7 @@ class Issue:
         print("```")
         print("")
         print("</details>")
-
+        print("")
 
 
         if (self.issueTemplate is None):
@@ -71,7 +71,6 @@ class Issue:
         
         possibleReason = "while {:s} is included in this build.  No process is actively using this library.  Further, this application is not customer-facing, it is not exposed to the internet, and intended only for internal LN use.".format(path)
         url = self.issueTemplate.format( build_name=self.buildName, build_version=self.buildNumber, violation_id=", ".join(self.cve), cve_id=", ".join(self.cve), possible_reason=possibleReason)
-        print("")
         print("<details><summary>Exception Request</summary>")
         print("")
         print("[Create a new JFrog Exception Request Issue]({:s})".format(url))
@@ -97,7 +96,7 @@ class XrayPrettifier:
     def set_issue_template(self, issueTemplate):
         if issueTemplate is None:
             self.issueTemplate = None
-        if issueTemplate == "NA":
+        if issueTemplate != "NA":
             self.issueTemplate = None
         self.issueTemplate = issueTemplate
 
