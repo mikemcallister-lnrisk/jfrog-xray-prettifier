@@ -274,7 +274,7 @@ class XrayPrettifier:
             print("## {:s}".format(m))
             dump_obj_panel("response", data)
             mc = MessageCard("Success", "00FF00")
-            mc.title = "🏆 {:s} - {:d} critical, {:d} high xray vulnerabilities".format(self.githubRepo, len(crit), len(high))
+            mc.title = "🏆 {:s} - {:s} - {:d} critical, {:d} high".format(self.githubRepo, self.buildName, len(crit), len(high))
             s = Section()
             s.activitySubtitle = "[{:s}]({:s})".format(message, link)
             s.activityTitle = self.githubBuildUrl
@@ -285,12 +285,12 @@ class XrayPrettifier:
         if len(crit) > 0:
             m = ":skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
             print("## {:s}".format(m))
-            mc.title = "💀 {:s} - {:d} critical, {:d} high xray vulnerabilities".format(self.githubRepo, len(crit), len(high))
+            mc.title = "💀 {:s} - {:s} - {:d} critical, {:d} high".format(self.githubRepo, self.buildName, len(crit), len(high))
             dump_obj_panel("response", data)
         else:
             m = ":fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
             print("## {:s}".format(m))
-            mc.title = "🔥 {:s} - {:d} critical, {:d} high xray vulnerabilities".format(self.githubRepo, len(crit), len(high))
+            mc.title = "🔥 {:s} - {:s} - {:d} critical, {:d} high".format(self.githubRepo, self.buildName, len(crit), len(high))
             dump_obj_panel("response", data)
 
         s = Section()
