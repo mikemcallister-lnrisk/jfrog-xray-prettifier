@@ -22,6 +22,37 @@ def bail_with_data(m, d):
     dump_obj_panel("Response", d)
     exit(0)
 
+
+class MessageCard(JSONEncoder):
+    def __init__(self, title), themeColor="000000"):
+        self.title = title
+        self.themeColor = themeColor
+        self.sections = []
+
+
+    def default(self, o):
+        return { 
+            "title": self.title,
+            "summary": self.title,
+            "themeColor": self.themeColor,
+            "sections": self.sections
+            "@context": "http://schema.org/extensions",
+            "@type": "MessageCard"
+        }
+
+
+class Section:
+    def __init__(self):
+        self.activityTitle = ""
+        self.activitySubtitle = ""
+        self.markdown = True
+        self.facts = []
+
+class Fact:
+    def __init__(self):
+        self.name = ""
+        self.value = ""
+
 class Issue:
     def __init__(self):
         self.severity = None
@@ -44,13 +75,31 @@ class Issue:
             path = fileName(self.impactedPaths[0])
         return path
 
-    def print(self):
-        path = self.getPath()
+    def getIcon(self):
         icon = ":fire:"
         if (self.severity == 'Critical'):
             icon = ":skull:"
+        return icon
+
+    def getCVE(self):
+        return ", ".join(self.cve)
+
+    def asSection(self):
+        section = Section()
+        section.activityTitle = "{:s} {:s}  {:s}".format(self.getIcon(), self.getCVE(), path)
+        section.activitySubtitle = self.summary
+        for p in self.impactedPaths:
+            fact = Fact()
+            fact.name = "`{:s}`".format(fileName(p))
+            fact.value = "_{:s}_".format(p[-100:])
+            section.facts.append(fact)
+        return section
+
+    def print(self):
+        path = self.getPath()
+        icon = self.getIcon()
         
-        print("### {:s} {:s}  {:s}".format(icon, ", ".join(self.cve) , path))
+        print("### {:s} {:s}  {:s}".format(icon, ", ".join(self.getCVE()) , path))
 
         print(self.summary)
         print("")
@@ -103,13 +152,30 @@ class XrayPrettifier:
             return
         self.issueTemplate = issueTemplate
 
+    def set_teams_webhook(self, teamsWebhook):
+        if teamsWebhook is None:
+            self.teamsWebhook = None
+            return
+        if teamsWebhook == "NA":
+            self.teamsWebhook = None
+            return
+        self.teamsWebhook = teamsWebhook
+
+    def teamsEnabled(self):
+        return self.teamsWebhook is not None
+
     def __init__(self):
         self.hasData = False
         self.failBuild = False
+        self.teamsWebhook = None
         self.buildName = None
         self.buildNumber = None
         self.issueTemplate = None
-   
+    
+    def send_message_card(self, messageCard):
+        if not self.teamsEnabled():
+            return
+        request.post(self.teamsWebhook, json=messageCard)
 
     def analyze_results(self, filename):
         with open(filename) as f:
@@ -165,21 +231,33 @@ class XrayPrettifier:
         if not hasData:
             bail_with_data("missing xray data", data)
         if len(crit) == 0 and len(high) == 0:
-            print("## :trophy: 0 critical, 0 high xray vulernabilities for this build - [{:s}]({:s})".format(message, link))
+            m = ":trophy: 0 critical, 0 high xray vulernabilities for this build - [{:s}]({:s})".format(message, link)
+            print("## {:s}".format(m))
             dump_obj_panel("response", data)
+            mc = MessageCard(m, "00FF00")
+            self.send_message_card(mc)
             exit(0)
+        mc = MessageCard("Xray Vulnerabilities", "FF0000")
         if len(crit) > 0:
-            print("## :skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link))
+            m = ":skull: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
+            print("## {:s}".format(m))
+            mc.title = m
             dump_obj_panel("response", data)
         else:
-            print("## :fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link))
+            m = ":fire: {:d} critical, {:d} high xray vulnerabilities for this build - [{:s}]({:s})".format(len(crit) , len(high),message, link)
+            print("## {:s}".format(m))
+            mc.title = m
             dump_obj_panel("response", data)
 
 
         for c in crit:
             c.print()
+            m.sections.append(c.asSection())
         for h in high:
             h.print()
+            m.sections.append(h.asSection())
+
+        self.send_message_card(mc)
 
         if self.failBuild:
             exit(1)
