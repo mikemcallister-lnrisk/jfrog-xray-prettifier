@@ -17,6 +17,11 @@ def dump_obj_panel(title, obj):
     print("</details>")
     print("")
 
+def bail_with_data(m, d):
+    print("###: :question: No xray data ({:s}) found for build {:s}/{:s}".format(m, self.buildName, self.buildNumber))
+    dump_obj_panel("Response", d)
+    exit(0)
+
 class Issue:
     def __init__(self):
         self.severity = None
@@ -26,6 +31,7 @@ class Issue:
         self.issue = None
         self.buildName = None
         self.buildNumber = None
+        self.issueTemplate = None
     
     def sortString(self):
         if len(self.impactedPaths) > 0:
@@ -92,10 +98,7 @@ class XrayPrettifier:
         self.hasData = False
         self.failBuild = False
     
-    def bail_with_data(self, m, d):
-        print("###: :question: No xray data ({:s}) found for build {:s}/{:s}".format(m, self.buildName, self.buildNumber))
-        dump_obj_panel("Response", d)
-        exit(0)
+   
 
     def analyze_results(self, filename):
         with open(filename) as f:
