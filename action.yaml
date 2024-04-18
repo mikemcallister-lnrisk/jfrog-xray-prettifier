@@ -19,7 +19,12 @@ inputs:
     description: |
       A python format string that can be specified to generate a link to a new "ignore this vulnerability" issue.
       The format string may contain the following fields:
-       
+      possible_reason: a sample description of why the vulnerability is not a problem
+      cve_id: the cve id of the vulnerability
+      violation_id: the violation id of the vulnerability, same as the cve id
+      build_name: the name of the build
+      build_number: the number of the build
+      example: https://github.com/myorg/exception-requests/issues/new?assignees=&labels=approved%2Capplied&projects=&template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo
     required: false
 runs:
   using: 'composite'
