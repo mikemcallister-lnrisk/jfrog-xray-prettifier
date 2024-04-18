@@ -197,7 +197,8 @@ class XrayPrettifier:
 
         dump_strjson_panel("messageCard", data)
 
-        request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
+        resp = request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
+        dump_strjson_panel("response", resp.text)
 
     def analyze_results(self, filename):
         with open(filename) as f:
