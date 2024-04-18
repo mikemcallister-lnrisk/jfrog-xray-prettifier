@@ -26,6 +26,7 @@ inputs:
       build_number: the number of the build
       example: https://github.com/myorg/exception-requests/issues/new?assignees=&labels=approved%2Capplied&projects=&template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo
     required: false
+    default: "NA"
 runs:
   using: 'composite'
   steps:
@@ -47,6 +48,7 @@ runs:
         xray.set_build_name("${{ inputs.BUILD_NAME }}")
         xray.set_build_number("${{ inputs.BUILD_NUMBER }}")
         xray.set_fail_build("${{ inputs.FAIL_BUILD }}" == "true")
+        xray.set_issue_template("${{ inputs.ISSUE_URL_TEMPLATE }}")
         xray.analyze_results("${{ inputs.XRAY_RESULTS_JSON_FILE }}")
         EOF
         python getbuild.py >> $GITHUB_STEP_SUMMARY
