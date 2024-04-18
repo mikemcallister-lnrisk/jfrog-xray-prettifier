@@ -70,6 +70,7 @@ class Issue:
             return
         
         possibleReason = "while {:s} is included in this build.  No process is actively using this library.  Further, this application is not customer-facing, it is not exposed to the internet, and intended only for internal LN use.".format(path)
+        possibleReason = urllib.parse.quote_plus(possibleReason)
         url = self.issueTemplate.format( build_name=self.buildName, build_version=self.buildNumber, build_number=self.buildNumber, violation_id=", ".join(self.cve), cve_id=", ".join(self.cve), possible_reason=possibleReason)
         print("<details><summary>Exception Request</summary>")
         print("")
