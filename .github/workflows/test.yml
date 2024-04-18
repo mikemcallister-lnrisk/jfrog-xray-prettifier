@@ -1,0 +1,38 @@
+name: Test Action
+on:
+    workflow_dispatch:
+        inputs:
+            BUILD_NAME:
+                type: choice
+                description: 'BUILD_NAME'
+                required: true
+                options:
+                - foo
+                - bar
+            failOnXrayResults:
+                type: choice
+                description: 'Fail if XRAY reports issues'
+                required: true
+                options:
+                - true
+                - false
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        name: test
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - name: do test
+              id: do_test
+              uses: ./
+              with:
+                XRAY_RESULTS_JSON_FILE: ./test/xray_test.json
+                BUILD_NAME: ${{ github.event.inputs.BUILD_NAME }}
+                BUILD_NUMBER: 1
+                FAIL_BUILD: ${{ github.event.inputs.failOnXrayResults == 'true' }}
+
+
+            
+
