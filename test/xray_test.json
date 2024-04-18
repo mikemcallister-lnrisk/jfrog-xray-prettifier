@@ -2,8 +2,8 @@
     "summary": {
       "total_alerts": 39,
       "fail_build": true,
-      "message": "Build kettleops-docker number 475 was scanned by Xray and 39 Alerts were generated",
-      "more_details_url": "https://rsguseast.jfrog.io/ui/scans-list/builds-scans/kettleops-docker/scan-descendants/475?version=475&package_id=build%3A%2F%2F%5Bbr3-build-info%5D%2Fkettleops-docker&build_repository=br3-build-info&component_id=build%3A%2F%2F%5Bbr3-build-info%5D%2Fkettleops-docker%3A475&page_type=security-vulnerabilities&exposure_status=to_fix"
+      "message": "Build ddd number 475 was scanned by Xray and 39 Alerts were generated",
+      "more_details_url": "https://host/ui/scans-list/builds-scans/ddd/scan-descendants/475?version=475&package_id=build%3A%2F%2F%5Beeeee%5D%2Fddd&build_repository=eeeee&component_id=build%3A%2F%2F%5Beeeee%5D%2Fddd%3A475&page_type=security-vulnerabilities&exposure_status=to_fix"
     },
     "alerts": [
       {
@@ -21,9 +21,9 @@
             "description": "PyJWT is a Python implementation of RFC 7519. PyJWT supports multiple different JWT signing algorithms. With JWT, an attacker submitting the JWT token can choose the used signing algorithm. The PyJWT library requires that the application chooses what algorithms are supported. The application can specify `jwt.algorithms.get_default_algorithms()` to get support for all algorithms, or specify a single algorithm. The issue is not that big as `algorithms=jwt.algorithms.get_default_algorithms()` has to be used. Users should upgrade to v2.4.0 to receive a patch for this issue. As a workaround, always be explicit with the algorithms that are accepted and expected when decoding.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -54,9 +54,9 @@
             "description": "The openssl gem for Ruby uses the same initialization vector (IV) in GCM Mode (aes-*-gcm) when the IV is set before the key, which makes it easier for context-dependent attackers to bypass the encryption protection mechanism.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -96,9 +96,9 @@
             "description": "crypto/rsa/rsa_gen.c in OpenSSL before 0.9.6 mishandles C bitwise-shift operations that exceed the size of an expression, which makes it easier for remote attackers to defeat cryptographic protection mechanisms by leveraging improper RSA key generation on 64-bit HP-UX platforms.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -138,9 +138,9 @@
             "description": "There is a type confusion vulnerability relating to X.400 address processing\ninside an X.509 GeneralName. X.400 addresses were parsed as an ASN1_STRING but\nthe public structure definition for GENERAL_NAME incorrectly specified the type\nof the x400Address field as ASN1_TYPE. This field is subsequently interpreted by\nthe OpenSSL function GENERAL_NAME_cmp as an ASN1_TYPE rather than an\nASN1_STRING.\n\nWhen CRL checking is enabled (i.e. the application sets the\nX509_V_FLAG_CRL_CHECK flag), this vulnerability may allow an attacker to pass\narbitrary pointers to a memcmp call, enabling them to read memory contents or\nenact a denial of service. In most cases, the attack requires the attacker to\nprovide both the certificate chain and CRL, neither of which need to have a\nvalid signature. If the attacker only controls one of these inputs, the other\ninput must already contain an X.400 address as a CRL distribution point, which\nis uncommon. As such, this vulnerability is most likely to only affect\napplications which have implemented their own functionality for retrieving CRLs\nover a network.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -171,9 +171,9 @@
             "description": "Improper Input Validation vulnerability in Apache Tomcat. Tomcat from 11.0.0-M1 through 11.0.0-M10, from 10.1.0-M1 through 10.1.15, from 9.0.0-M1 through 9.0.82, and from 8.5.0 through 8.5.95 did not correctly parse HTTP trailer headers. A trailer header that exceeded the header size limit could cause Tomcat to treat a single request as multiple requests leading to the possibility of request smuggling when behind a reverse proxy.\n\nUsers are recommended to upgrade to version 11.0.0-M11\u00a0onwards, 10.1.16 onwards, 9.0.83 onwards or 8.5.96 onwards, which fix the issue.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -204,9 +204,9 @@
             "description": "In verifyHostName of OkHostnameVerifier.java, there is a possible way to accept a certificate for the wrong domain due to improperly used crypto. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.Product: AndroidVersions: Android-8.1 Android-9 Android-10 Android-11Android ID: A-171980069",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -237,9 +237,9 @@
             "description": "### Summary\n\nA message parsing and memory management vulnerability in ProtocolBuffer\u2019s C++ and Python implementations can trigger an out of memory (OOM) failure when processing a specially crafted message, which could lead to a denial of service (DoS) on services using the libraries.\n\nReporter: [ClusterFuzz](https://google.github.io/clusterfuzz/)\n\nAffected versions: All versions of C++ Protobufs (including Python) prior to the versions listed below.\n\n### Severity & Impact\nAs scored by google  \n**Medium 5.7** - [CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H](https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H)  \nAsscored byt NIST  \n**High 7.5** - [CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H](https://www.first.org/cvss/calculator/3.1#CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H)\n\nA small (~500 KB) malicious payload can be constructed which causes the running service to allocate more than 3GB of RAM.\n\n### Proof of Concept\n\nFor reproduction details, please refer to the unit test that identifies the specific inputs that exercise this parsing weakness.\n\n### Mitigation / Patching\n\nPlease update to the latest available versions of the following packages:\n- protobuf-cpp (3.18.3, 3.19.5, 3.20.2, 3.21.6)\n- protobuf-python (3.18.3, 3.19.5, 3.20.2, 4.21.6)",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -270,9 +270,9 @@
             "description": "Certifi 2022.12.07 removes root certificates from \"TrustCor\" from the root store. These are in the process of being removed from Mozilla's trust store.\n\nTrustCor's root certificates are being removed pursuant to an investigation prompted by media reporting that TrustCor's ownership also operated a business that produced spyware. Conclusions of Mozilla's investigation can be found [here](https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/oxX69KFvsm4/m/yLohoVqtCgAJ).",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -303,9 +303,9 @@
             "description": "An invalid pointer dereference on read can be triggered when an application tries to load malformed PKCS7 data with the `d2i_PKCS7()`, `d2i_PKCS7_bio()` or `d2i_PKCS7_fp()` functions.\n\nThe result of the dereference is an application crash which could lead to a denial of service attack. The TLS implementation in OpenSSL does not call this function however third party applications might call these functions on untrusted data.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -336,9 +336,9 @@
             "description": "A vulnerability was found in libX11 due to an integer overflow within the XCreateImage() function. This flaw allows a local user to trigger an integer overflow and execute arbitrary code with elevated privileges.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -369,9 +369,9 @@
             "description": "The HTTP/2 protocol allows a denial of service (server resource consumption) because request cancellation can reset many streams quickly, as exploited in the wild in August through October 2023.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -402,9 +402,9 @@
             "description": "Issue summary: A bug has been identified in the processing of key and\ninitialisation vector (IV) lengths.  This can lead to potential truncation\nor overruns during the initialisation of some symmetric ciphers.\n\nImpact summary: A truncation in the IV can result in non-uniqueness,\nwhich could result in loss of confidentiality for some cipher modes.\n\nWhen calling EVP_EncryptInit_ex2(), EVP_DecryptInit_ex2() or\nEVP_CipherInit_ex2() the provided OSSL_PARAM array is processed after\nthe key and IV have been established.  Any alterations to the key length,\nvia the \"keylen\" parameter or the IV length, via the \"ivlen\" parameter,\nwithin the OSSL_PARAM array will not take effect as intended, potentially\ncausing truncation or overreading of these values.  The following ciphers\nand cipher modes are impacted: RC2, RC4, RC5, CCM, GCM and OCB.\n\nFor the CCM, GCM and OCB cipher modes, truncation of the IV can result in\nloss of confidentiality.  For example, when following NIST's SP 800-38D\nsection 8.2.1 guidance for constructing a deterministic IV for AES in\nGCM mode, truncation of the counter portion could lead to IV reuse.\n\nBoth truncations and overruns of the key and overruns of the IV will\nproduce incorrect results and could, in some cases, trigger a memory\nexception.  However, these issues are not currently assessed as security\ncritical.\n\nChanging the key and/or IV lengths is not considered to be a common operation\nand the vulnerable API was recently introduced. Furthermore it is likely that\napplication developers will have spotted this problem during testing since\ndecryption would fail unless both peers in the communication were similarly\nvulnerable. For these reasons we expect the probability of an application being\nvulnerable to this to be quite low. However if an application is vulnerable then\nthis issue is considered very serious. For these reasons we have assessed this\nissue as Moderate severity overall.\n\nThe OpenSSL SSL/TLS implementation is not affected by this issue.\n\nThe OpenSSL 3.0 and 3.1 FIPS providers are...",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -444,9 +444,9 @@
             "description": "Before Go 1.20, the RSA based TLS key exchanges used the math/big library, which is not constant time. RSA blinding was applied to prevent timing attacks, but analysis shows this may not have been fully effective. In particular it appears as if the removal of PKCS#1 padding may leak timing information, which in turn could be used to recover session key bits.\n\nIn Go 1.20, the crypto/tls library switched to a fully constant time RSA implementation, which we do not believe exhibits any timing side channels.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -477,9 +477,9 @@
             "description": "An out-of-memory flaw was found in libtiff that could be triggered by passing a crafted tiff file to the TIFFRasterScanlineSize64() API. This flaw allows a remote attacker to cause a denial of service via a crafted input with a size smaller than 379 KB.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -510,9 +510,9 @@
             "description": "Python Packaging Authority (PyPA) Wheel is a reference implementation of the Python wheel packaging standard. Wheel 0.37.1 and earlier are vulnerable to a Regular Expression denial of service via attacker controlled input to the wheel cli. The vulnerable regex is used to verify the validity of Wheel file names. This has been patched in version 0.38.1.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -543,9 +543,9 @@
             "description": "The public API function `BIO_new_NDEF` is a helper function used for streaming ASN.1 data via a `BIO`. It is primarily used internally to OpenSSL to support the SMIME, CMS and PKCS7 streaming capabilities, but may also be called directly by end user applications.\n\nThe function receives a `BIO` from the caller, prepends a new `BIO_f_asn1` filter `BIO` onto the front of it to form a `BIO` chain, and then returns the new head of the `BIO` chain to the caller. Under certain conditions, for example if a CMS recipient public key is invalid, the new filter `BIO` is freed and the function returns a `NULL` result indicating a failure. However, in this case, the `BIO` chain is not properly cleaned up and the `BIO` passed by the caller still retains internal pointers to the previously freed filter `BIO`. If the caller then goes on to call `BIO_pop()` on the `BIO` then a use-after-free will occur. This will most likely result in a crash.\n\nThis scenario occurs directly in the internal function `B64_write_ASN1()` which may cause `BIO_new_NDEF()` to be called and will subsequently call `BIO_pop()` on the `BIO`. This internal function is in turn called by the public API functions `PEM_write_bio_ASN1_stream`, `PEM_write_bio_CMS_stream`, `PEM_write_bio_PKCS7_stream`, `SMIME_write_ASN1`, `SMIME_write_CMS` and `SMIME_write_PKCS7`.\n\nOther public API functions that may be impacted by this include `i2d_ASN1_bio_stream`, `BIO_new_CMS`, `BIO_new_PKCS7`, `i2d_CMS_bio_stream` and `i2d_PKCS7_bio_stream`.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -576,9 +576,9 @@
             "description": "Vulnerability in the MySQL Connectors product of Oracle MySQL (component: Connector/J).  Supported versions that are affected are 8.1.0 and prior. Difficult to exploit vulnerability allows unauthenticated attacker with network access via multiple protocols to compromise MySQL Connectors.  Successful attacks require human interaction from a person other than the attacker and while the vulnerability is in MySQL Connectors, attacks may significantly impact additional products (scope change). Successful attacks of this vulnerability can result in takeover of MySQL Connectors. CVSS 3.1 Base Score 8.3 (Confidentiality, Integrity and Availability impacts).  CVSS Vector: (CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:H/I:H/A:H).",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -609,9 +609,9 @@
             "description": "The filepath package does not recognize paths with a \\??\\ prefix as special.\n\nOn Windows, a path beginning with \\??\\ is a Root Local Device path equivalent to a path beginning with \\\\?\\. Paths with a \\??\\ prefix may be used to access arbitrary locations on the system. For example, the path \\??\\c:\\x is equivalent to the more common path c:\\x.\n\nBefore fix, Clean could convert a rooted path such as \\a\\..\\??\\b into the root local device path \\??\\b. Clean will now convert this to .\\??\\b.\n\nSimilarly, Join(\\, ??, b) could convert a seemingly innocent sequence of path elements into the root local device path \\??\\b. Join will now convert this to \\.\\??\\b.\n\nIn addition, with fix, IsAbs now correctly reports paths beginning with \\??\\ as absolute, and VolumeName correctly reports the \\??\\ prefix as a volume name.\n\nUPDATE: Go 1.20.11 and Go 1.21.4 inadvertently changed the definition of the volume name in Windows paths starting with \\?, resulting in filepath.Clean(\\?\\c:) returning \\?\\c: rather than \\?\\c:\\ (among other effects). The previous behavior has been restored.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -642,9 +642,9 @@
             "description": "In Spring Security, versions 5.7.x prior to 5.7.12, 5.8.x prior to 5.8.11, versions 6.0.x prior to 6.0.9, versions 6.1.x prior to 6.1.8, versions 6.2.x prior to 6.2.3, an application is possible vulnerable to broken access control when it directly uses the AuthenticatedVoter#vote passing a null Authentication parameter.\n\nSpecifically, an application is vulnerable if:\n\nThe application uses AuthenticatedVoter directly and a null authentication parameter is passed to it resulting in an erroneous true return value.\n\nAn application is not vulnerable if any of the following is true:\n\n* The application does not use AuthenticatedVoter#vote directly.\n* The application does not pass null to AuthenticatedVoter#vote.\n\nNote that AuthenticatedVoter is deprecated since 5.8, use implementations of AuthorizationManager as a replacement.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -675,9 +675,9 @@
             "description": "### Impact\n\nWhen provided with a URL containing many `@` characters in the authority component the authority regular expression exhibits catastrophic backtracking causing a denial of service if a URL were passed as a parameter or redirected to via an HTTP redirect.\n\n\n### Patches\n\nThe issue has been fixed in urllib3 v1.26.5.\n\n### References\n\n- [CVE-2021-33503](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33503)\n- [JVNVU#92413403 (English)](https://jvn.jp/en/vu/JVNVU92413403/)\n- [JVNVU#92413403 (Japanese)](https://jvn.jp/vu/JVNVU92413403/)\n- [urllib3 v1.26.5](https://github.com/urllib3/urllib3/releases/tag/1.26.5)\n\n### For more information\nIf you have any questions or comments about this advisory:\n* Ask in our [community Discord](https://discord.gg/urllib3)\n* Email [sethmichaellarson@gmail.com](mailto:sethmichaellarson@gmail.com)",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -708,9 +708,9 @@
             "description": "If an X.509 certificate contains a malformed policy constraint and policy processing is enabled, then a write lock will be taken twice recursively. On some operating systems (most widely: Windows) this results in a denial of service when the affected process hangs. Policy processing being enabled on a publicly facing server is not considered to be a common setup. Policy processing is enabled by passing the `-policy' argument to the command line utilities or by calling either `X509_VERIFY_PARAM_add0_policy()' or `X509_VERIFY_PARAM_set1_policies()' functions.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -741,9 +741,9 @@
             "description": "The function `PEM_read_bio_ex()` reads a PEM file from a BIO and parses and decodes the \"name\" (e.g. \"CERTIFICATE\"), any header data and the payload data. If the function succeeds then the \"name_out\", \"header\" and \"data\" arguments are populated with pointers to buffers containing the relevant decoded data. The caller is responsible for freeing those buffers. It is possible to construct a PEM file that results in 0 bytes of payload data. In this case `PEM_read_bio_ex()` will return a failure code but will populate the header argument with a pointer to a buffer that has already been freed. If the caller also frees this buffer then a double free will occur. This will most likely lead to a crash. This could be exploited by an attacker who has the ability to supply malicious PEM files for parsing to achieve a denial of service attack.\n\nThe functions `PEM_read_bio()` and `PEM_read()` are simple wrappers around `PEM_read_bio_ex()` and therefore these functions are also directly affected.\n\nThese functions are also called indirectly by a number of other OpenSSL functions including `PEM_X509_INFO_read_bio_ex()` and\n`SSL_CTX_use_serverinfo_file()` which are also vulnerable. Some OpenSSL internal uses of these functions are not vulnerable because the caller does not free the header argument if `PEM_read_bio_ex()` returns a failure code. These locations include the `PEM_read_bio_TYPE()` functions as well as the decoders introduced in OpenSSL 3.0.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -774,9 +774,9 @@
             "description": "urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly.\n\nUsers **must** handle redirects themselves instead of relying on urllib3's automatic redirects to achieve safe processing of the `Cookie` header, thus we decided to strip the header by default in order to further protect users who aren't using the correct approach.\n\n## Affected usages\n\nWe believe the number of usages affected by this advisory is low. It requires all of the following to be true to be exploited:\n\n* Using an affected version of urllib3 (patched in v1.26.17 and v2.0.6)\n* Using the `Cookie` header on requests, which is mostly typical for impersonating a browser.\n* Not disabling HTTP redirects\n* Either not using HTTPS or for the origin server to redirect to a malicious origin.\n\n## Remediation\n\n* Upgrading to at least urllib3 v1.26.17 or v2.0.6\n* Disabling HTTP redirects using `redirects=False` when sending requests.\n* Not using the `Cookie` header.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -807,9 +807,9 @@
             "description": "An issue was discovered in the function gdev_prn_open_printer_seekable() in Artifex Ghostscript through 10.02.0 allows remote attackers to crash the application via a dangling pointer.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -840,9 +840,9 @@
             "description": "An issue was discovered in pip (all versions) because it installs the version with the highest version number, even if the user had intended to obtain a private package from a private index. This only affects use of the --extra-index-url option, and exploitation requires that the package does not already exist in the public index (and thus the attacker can put the package there with an arbitrary version number). NOTE: it has been reported that this is intended functionality and the user is responsible for using --extra-index-url securely",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -873,9 +873,9 @@
             "description": "Certifi 2023.07.22 removes root certificates from \"e-Tugra\" from the root store. These are in the process of being removed from Mozilla's trust store.\n\n e-Tugra's root certificates are being removed pursuant to an investigation prompted by reporting of security issues in their systems. Conclusions of Mozilla's investigation can be found [here](https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/C-HrP1SEq1A).",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -906,9 +906,9 @@
             "description": "Heap buffer overflow in libwebp in Google Chrome prior to 116.0.5845.187 and libwebp 1.3.2 allowed a remote attacker to perform an out of bounds memory write via a crafted HTML page. (Chromium security severity: Critical)",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -939,9 +939,9 @@
             "description": "In Artifex Ghostscript through 10.01.2, gdevijs.c in GhostPDL can lead to remote code execution via crafted PostScript documents because they can switch to the IJS device, or change the IjsServer parameter, after SAFER has been activated. NOTE: it is a documented risk that the IJS server can be specified on a gs command line (the IJS device inherently must execute a command to start the IJS server).",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -972,9 +972,9 @@
             "description": "Due to failure in validating the length provided by an attacker-crafted PPD PostScript document, CUPS and libppd are susceptible to a heap-based buffer overflow and possibly code execution. This issue has been fixed in CUPS version 2.4.7, released in September of 2023.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1005,9 +1005,9 @@
             "description": "libexpat through 2.5.0 allows a denial of service (resource consumption) because many full reparsings are required in the case of a large token for which multiple buffer fills are needed.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1038,9 +1038,9 @@
             "description": "A `NULL` pointer can be dereferenced when signatures are being verified on PKCS7 `signed` or `signedAndEnveloped` data. In case the hash algorithm used for the signature is known to the OpenSSL library but the implementation of the hash algorithm is not available the digest initialization will fail. There is a missing check for the return value from the initialization function which later leads to invalid usage of the digest API most likely leading to a crash. The unavailability of an algorithm can be caused by using FIPS enabled configuration of providers or more commonly by not loading the legacy provider.\n\nPKCS7 data is processed by the SMIME library calls and also by the time stamp (TS) library calls. The TLS implementation in OpenSSL does not call these functions however third party applications would be affected if they call these functions to verify signatures on untrusted data.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1071,9 +1071,9 @@
             "description": "There is a stack overflow vulnerability in ash.c:6030 in busybox before 1.35. In the environment of Internet of Vehicles, this vulnerability can be executed from command to arbitrary code execution.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1122,9 +1122,9 @@
             "description": "pyca/cryptography's wheels include a statically linked copy of OpenSSL. The versions of OpenSSL included in cryptography 2.5-41.0.3 are vulnerable to several security issues. More details about the vulnerabilities themselves can be found in https://www.openssl.org/news/secadv/20230908.txt.\n\nIf you are building cryptography source (\"sdist\") then you are responsible for upgrading your copy of OpenSSL. Only users installing from wheels built by the cryptography project (i.e., those distributed on PyPI) need to update their cryptography versions.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1155,9 +1155,9 @@
             "description": "Using go get to fetch a module with the \".git\" suffix may unexpectedly fallback to the insecure \"git://\" protocol if the module is unavailable via the secure \"https://\" and \"git+ssh://\" protocols, even if GOINSECURE is not set for said module. This only affects users who are not using the module proxy and are fetching modules directly (i.e. GOPROXY=off).",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1188,9 +1188,9 @@
             "description": "A vulnerability was found in GnuTLS, where a cockpit (which uses gnuTLS) rejects a certificate chain with distributed trust. This issue occurs when validating a certificate chain with cockpit-certificate-ensure. This flaw allows an unauthenticated, remote client or attacker to initiate a denial of service attack.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1221,9 +1221,9 @@
             "description": "GzipSource does not handle an exception that might be raised when parsing a malformed gzip buffer. This may lead to denial of service of the Okio client when handling a crafted GZIP archive, by using the GzipSource class.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1263,9 +1263,9 @@
             "description": "A flaw was found in the python-cryptography package. This issue may allow a remote attacker to decrypt captured messages in TLS servers that use RSA key exchanges, which may lead to exposure of confidential or sensitive data.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1296,9 +1296,9 @@
             "description": "An invalid pointer dereference on read can be triggered when an application tries to check a malformed DSA public key by the `EVP_PKEY_public_check()` function. This will most likely lead to an application crash. This function can be called on public keys supplied from untrusted sources which could allow an attacker to cause a denial of service attack.\n\nThe TLS implementation in OpenSSL does not call this function but applications might call the function if there are additional security requirements imposed by standards such as FIPS 140-3.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
@@ -1329,9 +1329,9 @@
             "description": "A vulnerability was found in GnuTLS. The response times to malformed ciphertexts in RSA-PSK ClientKeyExchange differ from the response times of ciphertexts with correct PKCS#1 v1.5 padding. This issue may allow a remote attacker to perform a timing side-channel attack in the RSA-PSK key exchange, potentially leading to the leakage of sensitive data. CVE-2024-0553 is designated as an incomplete resolution for CVE-2023-5981.",
             "impacted_artifacts": [
               {
-                "name": "kettleops-docker",
-                "display_name": "[br3-build-info]/kettleops-docker:475",
-                "path": "default/br3-build-info/kettleops-docker",
+                "name": "ddd",
+                "display_name": "[eeeee]/ddd:475",
+                "path": "default/eeeee/ddd",
                 "pkg_type": "Build",
                 "sha256": "ea4f4499564c3675945181cad5640d3a5284bb9f2b91dc2f2f10406de8037ff1",
                 "sha1": "",
