@@ -38,6 +38,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
+        repository: mikemcallister-lnrisk/jfrog-xray-prettifier
         path: xraysummaryparser
     - name: 'Set up Python 3.8'
       uses: actions/setup-python@v4.3.0
