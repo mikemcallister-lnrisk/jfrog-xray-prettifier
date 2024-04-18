@@ -104,7 +104,7 @@ class Issue:
         path = self.getPath()
         icon = self.getIcon()
         
-        print("### {:s} {:s}  {:s}".format(icon, ", ".join(self.getCVE()) , path))
+        print("### {:s} {:s}  {:s}".format(icon, self.getCVE() , path))
 
         print(self.summary)
         print("")
