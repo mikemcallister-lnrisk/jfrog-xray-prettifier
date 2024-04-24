@@ -3,7 +3,7 @@
 
 ### Example Usage
 
-```
+```yaml
     - name: 'Build and push image'
       run: |
         TAG=${{ secrets.DOCKER_URL }}/${{ inputs.DOCKER_IMAGE_NAME }}:${{ inputs.DOCKER_VERSION }}
