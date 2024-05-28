@@ -2,6 +2,15 @@ import json
 import requests as request
 import urllib.parse
 
+CVE_TO_XRAY = {}
+
+
+
+def xrayIdFor(cves):
+    for cve in cves:
+        if cve in CVE_TO_XRAY:
+            return CVE_TO_XRAY[cve]
+    return ""
 
 def fileName(path):
     p = path.split('/')
@@ -64,6 +73,7 @@ class Issue:
         self.severity = None
         self.summary = None
         self.cve = []
+        self.xray = None
         self.impactedPaths = []
         self.issue = None
         self.buildName = None
@@ -136,7 +146,14 @@ class Issue:
         
         possibleReason = "while {:s} is included in this build.  No process is actively using this library.  Further, this application is not customer-facing, it is not exposed to the internet, and intended only for internal LN use.".format(path)
         possibleReason = urllib.parse.quote_plus(possibleReason)
-        url = self.issueTemplate.format( build_name=self.buildName, build_version=self.buildNumber, build_number=self.buildNumber, violation_id=", ".join(self.cve), cve_id=", ".join(self.cve), possible_reason=possibleReason)
+        url = self.issueTemplate.format( 
+                build_name=self.buildName, 
+                build_version=self.buildNumber, 
+                build_number=self.buildNumber,
+                xray_id=xrayIdFor(self.cve), 
+                violation_id=", ".join(self.cve), 
+                cve_id=", ".join(self.cve), 
+                possible_reason=possibleReason)
         print("<details><summary>Exception Request</summary>")
         print("")
         print("[Create a new JFrog Exception Request Issue]({:s})".format(url))
@@ -146,6 +163,8 @@ class Issue:
         print("| Build Name | `{:s}` |".format(self.buildName))
         print("| Build Version | `{:s}` |".format(self.buildNumber))        
         print("| Violation Id  | `{:s}` |".format(", ".join(self.cve)))
+        if "" != xrayIdFor(self.cve):
+            print("| Xray Id | `{:s}` |".format(xrayIdFor(self.cve)))
         print("| Possible Justification | `{:s}` |".format(possibleReason))
         print("")
         print("</details>")
@@ -211,6 +230,27 @@ class XrayPrettifier:
         
         data = json.dumps(messageCard, cls=MessageCardEncoder, indent=2)
         resp = request.post(self.teamsWebhook, data=data, headers={"Content-Type": "application/json"})
+
+    def set_build_info_file(self, filename):
+        if "NA" == filename:
+            return
+
+        with open(filename) as f:
+          data = json.load(f)
+        
+        if 'issues' not in data:
+            return
+        
+        for issue in data['issues']:
+            if 'issue_id' not in issue:
+                continue
+            if 'cves' not in issue:
+                continue
+            for cve in issue['cves']:
+                if 'cve' not in cve:
+                    continue
+                CVE_TO_XRAY[cve['cve']] = issue['issue_id']
+
 
     def analyze_results(self, filename):
         with open(filename) as f:
