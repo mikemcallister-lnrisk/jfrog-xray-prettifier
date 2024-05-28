@@ -131,6 +131,11 @@ class Issue:
         print("")
         for p in self.impactedPaths:
             print("- `{:s}` _{:s}_".format(fileName(p),p[-100:]))
+
+        if "" != xrayIdFor(self.cve):
+            print("")
+            print("- **Xray Id**`{:s}` ".format(xrayIdFor(self.cve)))
+
         print("<details><summary>Issue Details</summary>")
         print("")
         print("```json")
