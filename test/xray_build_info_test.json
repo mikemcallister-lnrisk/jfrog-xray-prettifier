@@ -1009,7 +1009,7 @@
             "provider": "JFrog",
             "cves": [
                 {
-                    "cve": "CVE-2018-6952",
+                    "cve": "CVE-2023-37920",
                     "cwe": [
                         "CWE-415"
                     ],
@@ -1056,7 +1056,7 @@
             "provider": "JFrog",
             "cves": [
                 {
-                    "cve": "CVE-2019-6461",
+                    "cve": "CVE-2023-43115",
                     "cwe": [
                         "CWE-617"
                     ],
