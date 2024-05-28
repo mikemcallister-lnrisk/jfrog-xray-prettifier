@@ -41,7 +41,7 @@ jobs:
               uses: ./
               with:
                 XRAY_RESULTS_JSON_FILE: ./test/xray_test.json
-                XRAY_BUILD_INFO_FILE: ./test/xray_build_info_test.json
+                # XRAY_BUILD_INFO_FILE: ./test/xray_build_info_test.json
                 BUILD_NAME: ${{ github.event.inputs.BUILD_NAME }}
                 BUILD_NUMBER: 1
                 FAIL_BUILD: ${{ github.event.inputs.failOnXrayResults == 'true' }}
