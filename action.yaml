@@ -21,11 +21,20 @@ inputs:
       The format string may contain the following fields:
       possible_reason: a sample description of why the vulnerability is not a problem
       cve_id: the cve id of the vulnerability
+      xray_id: the xray id of the vulnerability (if available, blank otherwise)
       violation_id: the violation id of the vulnerability, same as the cve id
       build_name: the name of the build
       build_number: the number of the build
       build_version: the number of the build.  synonumous with build_number
       example: https://github.com/myorg/exception-requests/issues/new?assignees=&labels=approved%2Capplied&projects=&template=JFrog_exception_request.yml&title=My+Exception+Request+for+{build_name}+(build_number}+{cve_id}&business_unit=someunit&build_name={build_name}&build_number={build_number}&violation_id={violation_id}&business_justification={possible_reason}&build_repository=repo
+    required: false
+    default: "NA"
+  XRAY_BUILD_INFO_FILE:
+    description: | 
+      the path to the json file containing the xray build info.  This is an optional file that is used to augment the
+      xray results with additional information about the build.  Specifically this maps CVEs which come from the 
+      ${XRAY_RESULTS_JSON_FILE} to their corresponding XRAY_ID whereever possible.  This is useful for generating
+      links to exception request issues in github.
     required: false
     default: "NA"
   TEAMS_WEBHOOK:
@@ -63,6 +72,7 @@ runs:
         xray.set_teams_webhook("${{ inputs.TEAMS_WEBHOOK }}")
         xray.set_github_repo("${{ github.repository }}")
         xray.set_github_build_url("${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
+        xray.set_build_info_file("${{ inputs.XRAY_BUILD_INFO_FILE }}")
         xray.analyze_results("../${{ inputs.XRAY_RESULTS_JSON_FILE }}")
         EOF
         python getbuild.py >> $GITHUB_STEP_SUMMARY
