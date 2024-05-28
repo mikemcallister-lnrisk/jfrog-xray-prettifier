@@ -72,7 +72,7 @@ runs:
         xray.set_teams_webhook("${{ inputs.TEAMS_WEBHOOK }}")
         xray.set_github_repo("${{ github.repository }}")
         xray.set_github_build_url("${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")
-        xray.set_build_info_file("${{ inputs.XRAY_BUILD_INFO_FILE }}")
+        xray.set_build_info_file("../${{ inputs.XRAY_BUILD_INFO_FILE }}")
         xray.analyze_results("../${{ inputs.XRAY_RESULTS_JSON_FILE }}")
         EOF
         python getbuild.py >> $GITHUB_STEP_SUMMARY
